@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!-- 
+        날짜 : 2022/09/22
+        이름 : 김지홍
+        내용 : Layout 실습하기
+     -->
+    <title>2_Layout</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #wrapper {
+            width: 800px;
+            height: auto;
+            background: #aaaaaa;            
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        header {
+            width: 780px;
+            height: 120px;
+            background: #eeeeee;
+        }
+        
+        main {
+            height: auto;
+            width: auto;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            background: #eeeeee;
+        }
+
+        main > Section {
+            height: 200px;
+            width: 760px;
+            background: #ffffff;
+            margin-top: 10px;
+        }
+
+        footer {
+            height: 100px;
+            width: auto;
+            background: #eeeeee;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h3>header</h3>
+        </header>
+        <main>
+            <h3>Main</h3>
+            <Section id="1">
+                <h3>Section #1</h3>
+            </Section>
+            <Section id="2">
+                <h3>Section #2</h3>
+            </Section>
+        </main>
+        <footer>
+            <h3>footer</h3>
+        </footer>
+    </div>
+
+</body>
+</html>

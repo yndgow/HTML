@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>5_Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+        #wrapper {
+            width: 800px;
+            height: auto;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+            background: #aaaaaa;
+        }
+        header {
+            height: 120px;
+            width: 780px;
+            background: #cccccc;
+        }
+        main {
+            height: auto;
+            width: auto;
+            background: #cccccc;
+            padding: 10px;
+            box-sizing: border-box;
+            margin: 10px 0;
+            position: relative;
+        }
+        main > section {
+            height: 400px;
+            width: 530px;
+            background: #eeeeee;
+            margin-right: 10px;
+        }
+        main > aside {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            height: 400px;
+            width: 220px;
+            background: #eeeeee;
+        }
+        footer {
+            height: 100px;
+            width: auto;
+            background: #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h3>Header</h3>
+        </header>
+        <main><h3>Main</h3>
+            <section>
+                <h4>Section</h4>
+            </section>
+            <aside>
+                <h4>Aside</h4>
+            </aside>
+        </main>
+        <footer>
+            <h3>Footer</h3>
+        </footer>
+    </div>
+
+
+</body>
+</html>

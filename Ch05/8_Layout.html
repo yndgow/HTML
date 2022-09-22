@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>8_Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrapper {
+            width: 860px;
+            height: auto;
+            padding: 10px;
+            box-sizing: border-box;
+            margin: 0 auto;
+            background: #aaa;
+        }
+        header {
+            position: relative;
+            height: 120px;
+            width: 840px;
+            padding: 10px;
+            box-sizing: border-box;            
+            background: #ccc;
+        }
+        header > nav{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            width: 820px;
+            height: 60px;
+            background: #eee;
+            
+        }
+        main {
+            height: auto;
+            width: auto;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            overflow: hidden;
+            background: #ccc;
+        }
+        main > section {
+            height: 400px;
+            width: 400px;
+            background: #eee;            
+            margin: 0 10px;
+            float: left;
+        }
+        main > aside {
+            height: 400px;
+            width: 200px;
+            background: #eee;
+            float: left;
+        }
+        footer {
+            height: 100px;
+            width: 840px;
+            background: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h3>Header</h3>
+            <nav><h4>Nav</h4></nav>
+        </header>
+        <main><h3>Main</h3>
+            <aside><h4>Aside #1</h4></aside>
+            <section><h4>Section</h4></section>
+            <aside><h4>Aside #2</h4></aside>
+        </main>
+        <footer><h3>Footer</h3></footer>
+
+    </div>
+    
+</body>
+</html>

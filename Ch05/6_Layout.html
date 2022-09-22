@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>6_Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrapper {
+            width: 860px;
+            height: auto;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+            background: #aaa;
+        }
+        header {
+            height: 120px;
+            width: 840px;
+            background: #ccc;
+        }
+        main {
+            height: auto;
+            width: auto;
+            padding: 10px;
+            margin: 10px 0;
+            background: #ccc;
+            overflow: hidden;
+        }
+        main > aside {
+            height: 400px;
+            width: 200px;
+            background: #eee;
+            margin-right: 10px;
+            float: left;
+        }
+        main > section {
+            height: 400px;
+            width: 400px;
+            float: left;
+            background: #eee;
+        }
+        footer {
+            height: 100px;
+            width: 840px;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header><h3>Header</h3></header>
+        <main><h3>Main</h3>
+            <aside><h4>Aside #1</h4></aside>
+            <aside><h4>Aside #2</h4></aside>
+            <section><h4>Section</h4></section>
+        </main>
+        <footer><h3>Footer</h3></footer>
+    </div>
+</body>
+</html>
