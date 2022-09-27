@@ -1,0 +1,230 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font: normal 12px '돋움';
+}
+ul, li {list-style: none; }
+a {text-decoration: none; color: #111;}
+
+#wrapper {
+    width: 100%;
+    height: auto;
+}
+
+/* Header */
+header {
+    width: 100%;
+    height: 100px;
+    background-image: url(../img/header_bg.png);
+    background-repeat: repeat-x;
+    background-position: bottom;
+}
+header > div {
+    position: relative;
+    width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+}
+header > div > .ra{
+    float:right;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+header > div > ul {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 28px;
+    background: #becedb;
+}
+header > div > ul > li {
+    float: left;
+    width: 20%;
+    height: 100%;
+    border-right: 1px solid white;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    line-height: 28px;
+    cursor: pointer;
+    font-weight: bold;
+}
+header > div > ul > li:hover {
+    color: #9eafbd;
+}
+header > div > ul > li:nth-child(1){
+    border-left: 1px solid white;
+}
+
+/* Main */
+main {
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 28px;
+    background: url(../img/main_bg.png);
+}
+main > section {
+    width: 100%;
+    height: 620px;
+}
+main > section > div {
+    float: left;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    
+}
+main > section > div:nth-child(5) {        
+    clear: left;
+}
+main > section > div:nth-child(7) {
+    clear: left;
+    margin-left: 200px;
+}
+
+/* main img */
+main > section > div > img {
+    position: absolute;
+}
+main > section > div:nth-child(1) > img:nth-child(3) {
+    top: -30px;
+}
+main > section > div:nth-child(2) > img:nth-child(2) {
+    bottom: 0;
+    left: 12px;
+}
+main > section > div:nth-child(2) > img:nth-child(3) {
+    top: 15%;
+    left: 25px;
+}
+main > section > div:nth-child(2) > img:nth-child(4) {
+    top: 32%;
+    left: 25px;
+}
+
+main > section > div:nth-child(3) > img:nth-child(2) {
+    top: 5px;
+    left: 25px;
+}
+main > section > div:nth-child(3) > img:nth-child(3) {
+    bottom: 0;
+    left: 15px;
+}main > section > div:nth-child(3) > img:nth-child(4) {
+    top: 35px;
+    left: 25px;
+}
+main > section > div:nth-child(3) > img:nth-child(5) {
+    top: 62px;
+    left: 30px;
+}
+
+main > section > div:nth-child(4) > img:nth-child(2) {
+    bottom: 0px;
+}
+main > section > div:nth-child(4) > img:nth-child(3) {
+    top: 30px;
+}
+main > section > div:nth-child(4) > img:nth-child(4) {
+    top: 65px;
+}
+
+main > section > div:nth-child(5) > img:nth-child(2) {
+    right: 0;
+}
+
+main > section > div:nth-child(6) > img:nth-child(2) {
+    right: 0;
+}
+
+main > section > div:nth-child(7) > img:nth-child(2) {
+    bottom: 0;
+    right: 0;
+}
+main > section > div:nth-child(7) > img:nth-child(3) {
+    top: 15px;
+    left: 25px;
+}
+main > section > div:nth-child(7) > img:nth-child(4) {
+    top: 50px;
+    left: 25px;
+}
+
+/* article */
+main > article {
+    width: 100%;
+    height: 150px;
+    background: white;
+    border-top: 1px solid #b9cadc;
+}
+main > article > div {
+    float: left;
+    position: relative;
+    width: 25%;
+    height: 100%;
+}
+
+/* article img */
+main > article img {
+    position: absolute;
+}
+main > article > div > img:nth-child(1) {
+    top: 20px;
+    left: 10px;
+}
+main > article > div:nth-child(1) > img:nth-child(2) {
+    top: 45px;
+    left: 15px;
+}
+
+/* table */
+main > article > div > table {
+    padding-top: 40px;
+    padding-left: 10px;
+}
+main > article > div > table td{
+    height: 18px;
+    color: #555;
+}
+
+/* gal */
+main > article > div:nth-child(4) > .gal {
+    margin-top: 50px;
+    margin-left: 5px;
+}
+main > article > div:nth-child(4) > .gal > a > img {
+    position: static;
+    display: inline-block;
+    width: 75px;
+    height: 55px;
+}
+
+/* Footer */
+footer {
+    width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+    border-top: 1px solid #b9cadc;
+}
+footer > div > img {
+    float: left;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+footer > div > p {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 11px;
+    line-height: 20px;
+    padding-left: 20px;
+}
+footer > div > p > span {
+    color: rgb(153, 153, 153);
+    font-family: Verdana;
+    padding-top: 20px;
+}
+footer > div > p  #resort {
+    color: #5d99b5;
+}
