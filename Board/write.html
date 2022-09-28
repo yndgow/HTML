@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>글쓰기</title>
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            #board.write{
+                width: 720px;
+                height: auto;
+                margin: 60px auto;
+                
+            }
+            #board.write > form{}
+            #board.write table{
+                width: 100%;
+                height: auto;
+                border-top: 2px solid #111;
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+            #board.write table > caption{
+                text-align: left;
+                margin-bottom: 5px;
+            }
+            #board.write table tr{
+                border-bottom: 1px solid #e9e9e9;
+            }
+            #board.write table tr > th{
+                width: 112px;
+                height: auto;
+                background: #f5f8f9;
+            }
+            #board.write table tr > th > td{
+                width: 608px;
+                height: auto;
+            }
+            #board.write table td:nth-of-type(2){
+                height: 308px;
+            }
+            #board.write table input{
+                width: 100%;
+                height: auto;
+                border: none;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            #board.write table input[name=title] {}
+            #board.write table textarea[name=contents] {
+                width: 100%;
+                height: 100%;
+                border: none;
+                padding: 10px;
+                box-sizing: border-box;
+                resize: none;
+            }
+            
+            #board.write table input[name=fileUpload] {}
+            #board.write .btn{
+                margin-top: 15px;
+                text-align: right;
+            }
+            #board.write .btnCancle {
+                border: 1px solid #bebebe;
+                padding: 8px;
+                color: #111;
+            }
+            #board.write .btnWriteC {
+                padding: 8px;
+                border: 1px solid #3b3c3f;
+                background: #4b545e;
+                color: #fff;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h3>Board System v1.0</h3>
+                <p>
+                    <span class="nick">홍길동</span>님 반갑습니다.
+                    <a href="#" class="logout">[로그아웃]</a>
+                </p>
+                    
+            </header>
+            <main id="board" class="write">
+                <form action="#">
+                    <table border="0">      
+                        <caption>글쓰기</caption>
+                        <tbody>
+                            <tr>
+                                <th>제목</th>
+                                <td><input type="text" name="title" id="title" placeholder="제목을 입력하세요"></td>
+                            </tr>
+                            <tr>
+                                <th>내용</th>
+                                <td><textarea name="contents" id="contents"></textarea><td>
+                            </tr>
+                            <tr>
+                                <th>첨부</th>
+                                <td><input type="file" name="fileUpoad" id="fileUpload"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="btn">
+                        <a href="./list.html" class="btnCancle">취소</a>
+                        <input type="submit" class="btnWriteC" value="작성완료">
+                    </div>
+                </form>
+            </main>
+
+            <footer>
+                <p>ⓒCopyleft by yndgow.or.kr</p>
+            </footer>
+        </div>  
+        
+    </body>
+</html>
