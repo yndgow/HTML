@@ -68,8 +68,7 @@
     width: auto;
     height: 352px;
   }
-  main > .slider > article {
-  }
+  main > .slider > article {}
   main > .go {
     width: 100%;
     height: 520px;
@@ -93,34 +92,35 @@
     margin-left: 11px;
   }
   main > .go > article > div:nth-child(3) {
+    float: right;
     width: 322px;
     height: 220px;
-    margin-left: 11px;
+    
   }
   main > .go > article > div:nth-child(4) {
+    float: right;
     width: 322px;
     height: 220px;
     margin-top: 10px;
     margin-left: 11px;
   }
   main > .go > article > div:nth-child(5) {
+    float: right;
     width: 322px;
     height: 220px;
     margin-top: 10px;
-    margin-left: 11px;
+    
   }
   main > .oneday {
     width: 100%;
     height: 190px;
   }
-  main > .oneday > article {
-  }
+  main > .oneday > article {}
   main > .vegetable {
     width: 100%;
     height: 660px;
   }
-  main > .vegetable > article {
-  }
+  main > .vegetable > article {}
   main > .vegetable > article > ul {
     width: 100%;
     height: 312px;
@@ -135,26 +135,20 @@
     border: 1px solid pink;
     box-sizing: border-box;
   }
-  main > .vegetable > article > ul > li:nth-child(1) {
-  }
-  main > .vegetable > article > ul > li:nth-child(2) {
-  }
-  main > .vegetable > article > ul > li:nth-child(3) {
-  }
-  main > .vegetable > article > ul > li:nth-child(4) {
-  }
+  main > .vegetable > article > ul > li:nth-child(1) {}
+  main > .vegetable > article > ul > li:nth-child(2) {}
+  main > .vegetable > article > ul > li:nth-child(3) {}
+  main > .vegetable > article > ul > li:nth-child(4) {}
   main > .premium {
     width: 100%;
     height: 200px;
   }
-  main > .premium > article {
-  }
+  main > .premium > article {}
   main > .seafood {
     width: 100%;
     height: 660px;
   }
-  main > .seafood > article {
-  }
+  main > .seafood > article {}
   main > .seafood > article > ul {
     width: 100%;
     height: 312px;
@@ -168,14 +162,10 @@
     border: 1px solid pink;
     box-sizing: border-box;
   }
-  main > .seafood > article > ul > li:nth-child(1) {
-  }
-  main > .seafood > article > ul > li:nth-child(2) {
-  }
-  main > .seafood > article > ul > li:nth-child(3) {
-  }
-  main > .seafood > article > ul > li:nth-child(4) {
-  }
+  main > .seafood > article > ul > li:nth-child(1) {}
+  main > .seafood > article > ul > li:nth-child(2) {}
+  main > .seafood > article > ul > li:nth-child(3) {}
+  main > .seafood > article > ul > li:nth-child(4) {}
   footer {
     width: 100%;
     height: auto;
