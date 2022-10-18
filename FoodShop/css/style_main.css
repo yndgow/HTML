@@ -45,7 +45,7 @@ header > div > * {
   box-sizing: border-box;
   margin: 0 auto;
 }
-header > div:nth-child(1){
+header > div:nth-child(1) {
   border-bottom: 1px solid #dcdcdc;
 }
 main {
@@ -172,7 +172,8 @@ footer {
   width: 100%;
   height: auto;
 }
-footer > div {}
+footer > div {
+}
 footer > div:nth-child(1) {
   width: 100%;
   height: 50px;
@@ -242,8 +243,31 @@ main .slider {
   background: #ffeed4;
 }
 main .slider > article {
-  background: url("../img/slider_banner1.jpg");
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  
 }
+main .slider div {
+  position: absolute;
+  top: 0;
+}
+main .slider div:nth-child(1) {
+  left: 0;
+}
+main .slider div:nth-child(2) {
+  left: 100%;
+}
+main .slider div:nth-child(3) {
+  left: 200%;
+}
+main .slider div:nth-child(4) {
+  left: 300%;
+}
+main .slider div:nth-child(5) {
+  left: 400%;
+}
+
 main .oneday {
   background: url("../img/oneday_bg.png");
   background-size: cover;
