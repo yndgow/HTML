@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ecomarket::main::</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font: normal 12px "noto sans korean";
+      }
+      a {
+        text-decoration: none;
+        color: #111;
+      }
+      li,
+      ol {
+        list-style: none;
+      }
+      #wrap {
+        width: 100%;
+        height: 100%;
+        border: 1px solid red;
+        box-sizing: border-box;
+      }
+      article {
+        border: 1px solid orange;
+        box-sizing: border-box;
+      }
+
+      /* header */
+      header {
+        width: 100%;
+        height: auto;
+        border: 1px solid blue;
+        box-sizing: border-box;
+      }
+      header > div {
+        width: 100%;
+        height: auto;
+        border: 1px solid green;
+        box-sizing: border-box;
+      }
+      header > div:nth-child(1) {
+        background: #f3f3f3;
+      }
+      header > div:nth-child(3) {
+        background: #564f47;
+      }
+      header > div > * {
+        width: 1126px;
+        margin: 0 auto;
+        border: 1px solid orange;
+        box-sizing: border-box;
+      }
+      header .top {
+        float: right;
+        margin-top: 6px;
+      }
+      header .ico {
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        margin-right: 30px;
+        background-image: url(./img/sprites.png);
+      }
+      header .ico .user {
+        position: relative;
+        top: 5px;
+        width: 17px;
+        height: 17px;
+        background-position: 0 -504px;
+      }
+      header .ico .cart {
+        width: 17px;
+        height: 17px;
+        background-position: 0 -487px;
+      }
+      header .ico .wish {
+        width: 17px;
+        height: 17px;
+        background-position: 0 -539px;
+      }
+      header > div > div {
+        height: 42px;
+      }
+      header section {
+        position: relative;
+        height: 108px;
+      }
+      header .logo {
+        position: absolute;
+        top: 10px;
+      }
+      header .banner {
+        position: absolute;
+        top: 15px;
+        right: 0;
+      }
+      header nav {
+        height: 44px;
+      }
+      header .gnb {
+      }
+      header .gnb > li {
+        float: left;
+        width: 16.66%;
+      }
+      header .gnb a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 44px;
+        font-size: 15px;
+        font-weight: bold;
+        color: #b0a171;
+        background-color: #464545;
+      }
+      header .gnb a:hover {
+        background-color: green;
+        font-size: 16px;
+        color: white;
+      }
+
+      /* main */
+      main {
+        width: 100%;
+        height: auto;
+        border: 1px solid blue;
+        box-sizing: border-box;
+      }
+      main > section {
+        width: 100%;
+
+        padding: 40px 0;
+        border: 1px solid green;
+        box-sizing: border-box;
+      }
+      main > section.banner {
+        height: 480px;
+      }
+      main > section.banner > article {
+        position: relative;
+      }
+      main .banner img {
+        position: absolute;
+      }
+      main .banner img:nth-child(1) {
+        top: 45px;
+      }
+      main .banner img:nth-child(2) {
+        top: 45px;
+        left: 450px;
+      }
+      main .banner img:nth-child(3) {
+        top: 38%;
+        left: 450px;
+      }
+
+      main > section.new {
+        height: auto;
+      }
+      main > section:nth-child(3) {
+        height: 620px;
+      }
+      main > section:nth-child(4) {
+        height: 220px;
+      }
+      main > section:nth-child(5) {
+        height: auto;
+      }
+      main > section:nth-child(6) {
+        height: 220px;
+      }
+      main > section:nth-child(7) {
+        height: auto;
+      }
+      main > section > article {
+        width: 1126px;
+        height: 100%;
+        margin: 0 auto;
+      }
+      main h3 {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      main h3 > span {
+        font-size: 28px;
+        font-weight: bold;
+        color: #699270;
+      }
+      main .new > article {
+        height: 480px;
+      }
+      main .new div {
+        position: relative;
+        float: left;
+        border: 1px solid pink;
+        box-sizing: border-box;
+      }
+      main .new div > * {
+        position: absolute;
+      }
+      main .new div:nth-child(1) {
+        position: relative;
+        width: 434px;
+        height: 100%;
+        background-image: url(./img/main_new_img1.jpg);
+      }
+      main .new div:nth-child(1) > * {
+        position: absolute;
+      }
+      main .new div:nth-child(1) > span:nth-child(2) {
+        top: 60px;
+        left: 40px;
+        font-size: 27px;
+        counter-reset: #564f47;
+      }
+      main .new div:nth-child(1) > span:nth-child(3) {
+        top: 116px;
+        left: 40px;
+        padding: 4px 6px;
+        font-size: 27px;
+        color: white;
+        background-image: url(./img/bg_transparent.png);
+      }
+      main .new div:nth-child(1) > span:nth-child(3) > strong {
+        font-size: 27px;
+        font-weight: bold;
+        color: #c3d069;
+      }
+      main .new span.price {
+        color: #ef9120;
+        font-size: 30px;
+      }
+      main .new span.price::after{
+        content: '원';
+        color: #ef9120;
+        font-size: 18px;
+      }
+      main .new div:nth-child(1) .price {
+        right: 20px;
+        bottom: 20px;
+      }
+      main .new .txt{
+        color: #564f47;
+        font-size: 16px;
+      }
+      main .new .tit{
+        font-size: 28px;
+      }
+      main .new div:nth-child(2) {
+        width: 345px;
+        height: 50%;
+      }
+      main .new div:nth-child(2) > :nth-child(1){
+        top: 25px;
+        left: 20px;
+      }
+      main .new div:nth-child(2) > :nth-child(2){
+        left: 140px;
+        top: 50px;
+      }
+      main .new div:nth-child(2) > :nth-child(3){
+        left: 140px;
+        top: 100px;
+        color: olive;
+      }
+      main .new div:nth-child(2) > :nth-child(4){
+        bottom: 20px;
+        right: 20px
+      }
+      main .new div:nth-child(3) {
+        width: 345px;
+        height: 50%;
+      }
+      main .new div:nth-child(3) > :nth-child(1){
+        bottom: 10px;
+        right: 15px;
+      }
+      main .new div:nth-child(3) > :nth-child(2){
+        left: 20px;
+        top: 50px;
+      }
+      main .new div:nth-child(3) > :nth-child(3){
+        left: 20px;
+        top: 100px;
+        color: #358a00;
+      }
+      main .new div:nth-child(3) > :nth-child(4){
+        bottom: 20px;
+        left: 15px;
+      }
+      main .new div:nth-child(4) {
+        width: 345px;
+        height: 50%;
+      }
+      main .new div:nth-child(4) > :nth-child(1){
+        right: 0;
+        bottom: 0;
+      }
+      main .new div:nth-child(4) > :nth-child(2){
+        left: 20px;
+        top: 30px;
+      }
+      main .new div:nth-child(4) > :nth-child(3){
+        left: 20px;
+        top: 80px;
+        color: #c51a1a;
+      }
+      main .new div:nth-child(4) > :nth-child(4){
+        bottom: 20px;
+        left: 20px
+      }
+      main .new div:nth-child(5) {
+        width: 345px;
+        height: 50%;
+      }
+      main .new div:nth-child(5) > :nth-child(1){
+        bottom: 0;
+        right: 0;
+      }
+      main .new div:nth-child(5) > :nth-child(2){
+        left: 20px;
+        top: 30px;
+      }
+      main .new div:nth-child(5) > :nth-child(3){
+        left: 20px;
+        top: 80px;
+        color: #9e7839;
+      }
+      main .new div:nth-child(5) > :nth-child(4){
+        bottom: 20px;
+        left: 20px
+      }
+      main section.master {
+        background-image: url(./img/main_master_bg.png);
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      main section.master > article img{
+        width: 100%;
+      }
+      main section.master > article > div {
+        float: left;
+        width: 25%;
+        height: 334px;
+        padding: 6px;
+        border: 1px solid #d4d4d4;
+        background-color: white;
+        box-sizing: border-box;
+      }
+      main section.organic_banner {
+        background-image: url(./img/main_organic_bg.png);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      main section.organic_banner > img {
+        position: absolute;
+        right: 90px;
+      }
+      main section.organic {
+      }
+      main article.gallary {
+        overflow: hidden;
+      }
+      main .gallary > div {
+        float: left;
+        height: 400px;
+        width: 25%;
+        border: 1px solid pink;
+        box-sizing: border-box;
+      }
+
+      /* footer */
+      footer {
+        width: 100%;
+        height: auto;
+        border: 1px solid blue;
+        box-sizing: border-box;
+      }
+      footer > div {
+        width: 1126px;
+        height: 210px;
+        margin: 0 auto;
+        border: 1px solid green;
+        box-sizing: border-box;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const gnb = document.getElementsByClassName("gnb");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+        <div>
+          <div>
+            <p class="top">
+              <a href="#">
+                <i class="ico user"></i>
+              </a>
+              <a href="#">
+                <i class="ico cart"></i>
+              </a>
+              <a href="#">
+                <i class="ico wish"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+        <div>
+          <section>
+            <a href="#" class="logo">
+              <img src="./img/header_logo.png" alt="header_logo" />
+            </a>
+            <a href="#" class="banner">
+              <img src="./img/header_banner.png" alt="header_banner" />
+            </a>
+          </section>
+        </div>
+        <div>
+          <nav>
+            <ul class="gnb">
+              <li><a href="#">친환경장터 소개</a></li>
+              <li><a href="#">과일</a></li>
+              <li><a href="#">채소</a></li>
+              <li><a href="#">쌀잡곡</a></li>
+              <li><a href="#">반찬</a></li>
+              <li><a href="#">고객센터</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- main -->
+      <main>
+        <section class="banner">
+          <article>
+            <img src="./img/main_banner_img.jpg" alt="" />
+            <img src="./img/main_banner_tit.jpg" alt="" />
+            <img src="./img/main_banner_txt.png" alt="" />
+          </article>
+        </section>
+        <section class="new">
+          <h3>장터 <span>새상품</span></h3>
+          <article>
+            <div>
+              <img src="img/main_new_badge.png" alt="" />
+              <span>우리농가에서 자란</span>
+              <span>껍질째 먹는 <strong>포도</strong></span>
+              <span class="price">8,900</span>
+            </div>
+            <div>
+              <img src="./img/main_new_img2.jpg" alt="" />
+              <span class="txt">맛과 향이 다른<br>정성가득 갓 짜낸</span>
+              <span class="tit">올리브 오일</span>
+              <span class="price">18,900</span>
+            </div>
+            <div>
+              <img src="./img/main_new_img3.png" alt="" />
+              <span class="txt">시력보호,혈액순환,피부미용</span>
+              <span class="tit">청경채</span>
+              <span class="price">10,000</span>
+            </div>
+            <div>
+              <img src="./img/main_new_img4.jpg" alt="" />
+              <span class="txt">강원도의 맑은<br>자연환경에서 생산한</span>
+              <span class="tit">천연벌꿀</span>
+              <span class="price">21,000</span>
+            </div>
+            <div>
+              <img src="./img/main_new_img5.jpg" alt="" />
+              <span class="txt">무농약 인증<br>버섯의 진한 향과 쫄깃한 식감</span>
+              <span class="tit">느타리버섯</span>
+              <span class="price">9,000</span>
+            </div>
+          </article>
+        </section>
+        <section class="master">
+          <article>
+            <h3>전국최고 <span>장터명인</span></h3>
+            <div>
+              <img src="./img/main_master_pic1.jpg" alt="">
+              <p>강원도 농작물 명인<br>내용을 입력 내용을 입력하세요.</p>
+              <span class="name">김ㅇㅇ씨</span>
+            </div>
+            <div>
+              <img src="./img/main_master_pic2.jpg" alt="">
+              <p>강원도 농작물 명인<br>내용을 입력 내용을 입력하세요.</p>
+              <span class="name">김ㅇㅇ씨</span>
+            </div>
+            <div>
+              <img src="./img/main_master_pic3.jpg" alt="">
+              <p>강원도 농작물 명인<br>내용을 입력 내용을 입력하세요.</p>
+              <span class="name">김ㅇㅇ씨</span>
+            </div>
+            <div>
+              <img src="./img/main_master_pic4.jpg" alt="">
+              <p>강원도 농작물 명인<br>내용을 입력 내용을 입력하세요.</p>
+              <span class="name">김ㅇㅇ씨</span>
+            </div>
+          </article>
+        </section>
+        <section class="organic_banner">
+          <img src="./img/main_organic_bg_txt.png" alt="">
+        </section>
+        <section class="organic">
+          <article class="gallary">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+          </article>
+        </section>
+        <section class="grain_banner"></section>
+        <section class="grain">
+          <article class="gallary">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+          </article>
+        </section>
+      </main>
+      <footer>
+        <div></div>
+      </footer>
+    </div>
+  </body>
+</html>
