@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>강좌관리</title>
+    <script src="../js/toggleForm.js"></script>
+  </head>
+  <body>
+    <h3>강좌관리</h3>
+    <a href="./lecture.jsp">강좌관리</a>
+    <a href="./register.jsp">수강관리</a>
+    <a href="./student.jsp">학생관리</a>
+
+    <h4>강좌현황</h4>
+    <button id="callForm">등록</button>
+    <table border="1">
+      <tr>
+        <th>번호</th>
+        <th>강좌명</th>
+        <th>학점</th>
+        <th>시간</th>
+        <th>강의장</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <div id="form" style="visibility: hidden">
+      <h4>강좌등록</h4>
+      <button id="closeForm">닫기</button>
+      <table border="1">
+        <tr>
+          <td>번호</td>
+          <td><input type="text" name="" /></td>
+        </tr>
+        <tr>
+          <td>강좌명</td>
+          <td><input type="text" name="" /></td>
+        </tr>
+        <tr>
+          <td>학점</td>
+          <td><input type="text" name="" /></td>
+        </tr>
+        <tr>
+          <td>시간</td>
+          <td><input type="text" name="" /></td>
+        </tr>
+        <tr>
+          <td>강의장</td>
+          <td><input type="text" name="" /></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="right"><button>추가</button></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>수강관리</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const callForm = document.getElementById("callForm");
+        const form = document.getElementById("form");
+        callForm.addEventListener("click", function () {
+          form.style.visibility = "visible";
+        });
+        const closeForm = document.getElementById("closeForm");
+
+        closeForm.addEventListener("click", function () {
+          form.style.visibility = "hidden";
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h3>수강관리</h3>
+    <a href="#">강좌관리</a>
+    <a href="#">수강관리</a>
+    <a href="#">학생관리</a>
+
+    <h4>수강현황</h4>
+    <input type="text" name="" id="" />
+    <button id="search">검색</button>
+    <button id="callForm">등록</button>
+    <table border="1">
+      <tr>
+        <th>학번</th>
+        <th>이름</th>
+        <th>강좌명</th>
+        <th>강좌코드</th>
+        <th>중간시험</th>
+        <th>기말시험</th>
+        <th>총점</th>
+        <th>등급</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <div id="form" style="visibility: hidden">
+      <h4>수강신청</h4>
+      <button id="closeForm">닫기</button>
+      <table border="1">
+        <tr>
+          <td>학번</td>
+          <td><input type="text" name="" /></td>
+        </tr>
+        <tr>
+          <td>이름</td>
+          <td><input type="text" name="" /></td>
+        </tr>
+        <tr>
+          <td>신청강좌</td>
+          <td>
+            <select name="lecture" id="lecture">
+              <option value="">강좌선택</option>
+              <option value="1">운영체제론</option>
+              <option value="2">무역영문</option>
+              <option value="3">세법개론</option>
+              <option value="4">빅데이터 개론</option>
+              <option value="5">컴퓨팅사고와 코딩</option>
+              <option value="6">사회복지 마케팅</option>
+              <option value="7">컴퓨터구조론</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="right"><button>신청</button></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
