@@ -230,7 +230,10 @@ main > .info > div:nth-child(2) {
 main > .info > div:nth-child(3) {
   width: 358px;
 }
-main > .info > div img, p {
+main > .info > div img {
+  position: absolute;
+}
+main > .info p {
   position: absolute;
 }
 main > .info > div:nth-child(1) img:nth-child(1) {
@@ -372,9 +375,22 @@ footer {
   background-image: url("../img/footer_top_line.png");
   background-repeat: no-repeat;
   background-position: top;
-  
+  box-sizing: border-box;
+}
+footer > img {
+  margin-top: 5px;
 }
 
-footer p{
-    float: right;
+footer > p{
+  float: right;
+  font-size: 11px;
+  color: #585858;
+  margin-top: 26px;
+  margin-right: 16px;
+  line-height: 18px;
+}
+
+footer > p > em {
+  color: #888;
+  font-weight: bold;
 }
