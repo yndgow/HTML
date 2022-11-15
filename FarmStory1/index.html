@@ -205,7 +205,7 @@
           </div>
           <div id="tabDiv">
             <ul id="tabUl">
-              <li id="tab1" class="tab">공지사항</li>
+              <li id="tab1" class="tab red">공지사항</li>
               <li id="tab2" class="tab">1:1고객문의</li>
               <li id="tab3" class="tab">자주묻는 질문</li>
             </ul>
@@ -239,30 +239,27 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         let onTab = document.getElementsByClassName("tab");
-        for(let i=0; i<onTab.length; i++){
-          onTab[i].addEventListener("click", function(e){  
-            
-          });
-        }
+        console.log(onTab);
         
-        onTab[0].addEventListener("click", function(e){
-          onTab[0].classList.add("red");
-          onTab[1].classList.remove("red");
-          onTab[2].classList.remove("red");
+        
+        // onTab[0].addEventListener("click", function(e){
+        //   onTab[0].classList.add("red");
+        //   onTab[1].classList.remove("red");
+        //   onTab[2].classList.remove("red");
 
-        });
-        onTab[1].addEventListener("click", function(e){
-          onTab[0].classList.remove("red");
-          onTab[1].classList.add("red");
-          onTab[2].classList.remove("red");
+        // });
+        // onTab[1].addEventListener("click", function(e){
+        //   onTab[0].classList.remove("red");
+        //   onTab[1].classList.add("red");
+        //   onTab[2].classList.remove("red");
 
-        });
-        onTab[2].addEventListener("click", function(e){
-          onTab[0].classList.remove("red");
-          onTab[1].classList.remove("red");
-          onTab[2].classList.add("red");
+        // });
+        // onTab[2].addEventListener("click", function(e){
+        //   onTab[0].classList.remove("red");
+        //   onTab[1].classList.remove("red");
+        //   onTab[2].classList.add("red");
 
-        });
+        // });
       });
     </script>
   </body>
