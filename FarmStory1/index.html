@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>팜스토리::메인</title>
     <link rel="stylesheet" href="css/style.css" />
+
   </head>
   <body>
     <div id="wrapper">
@@ -202,7 +203,24 @@
               예 금 주 (주)팜스토리
             </p>
           </div>
-          <div>3</div>
+          <div id="tabDiv">
+            <ul id="tabUl">
+              <li id="tab1" class="tab">공지사항</li>
+              <li id="tab2" class="tab">1:1고객문의</li>
+              <li id="tab3" class="tab">자주묻는 질문</li>
+            </ul>
+            <table id="recent">
+              <tr>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident natus voluptate voluptatibus vero dolorum, quasi numquam animi! Neque alias illo excepturi, doloremque saepe ad dolorum ab autem et, quis impedit.</td>
+              </tr>
+              <tr>
+                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, ipsum cumque nisi exercitationem ratione sed atque consequatur tenetur architecto, est totam sint natus illo accusamus quia iusto assumenda odit eius.</td>
+              </tr>
+              <tr>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores aut totam voluptate ea, consectetur vitae. Recusandae corrupti accusamus molestias perferendis tempore illum dolorem, optio id sit. Minus soluta laudantium similique.</td>
+              </tr>
+            </table>
+          </div>
         </div>
       </main>
       <footer>
@@ -218,5 +236,34 @@
         </p>
       </footer>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let onTab = document.getElementsByClassName("tab");
+        for(let i=0; i<onTab.length; i++){
+          onTab[i].addEventListener("click", function(e){  
+            
+          });
+        }
+        
+        onTab[0].addEventListener("click", function(e){
+          onTab[0].classList.add("red");
+          onTab[1].classList.remove("red");
+          onTab[2].classList.remove("red");
+
+        });
+        onTab[1].addEventListener("click", function(e){
+          onTab[0].classList.remove("red");
+          onTab[1].classList.add("red");
+          onTab[2].classList.remove("red");
+
+        });
+        onTab[2].addEventListener("click", function(e){
+          onTab[0].classList.remove("red");
+          onTab[1].classList.remove("red");
+          onTab[2].classList.add("red");
+
+        });
+      });
+    </script>
   </body>
 </html>

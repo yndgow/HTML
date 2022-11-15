@@ -394,3 +394,37 @@ footer > p > em {
   color: #888;
   font-weight: bold;
 }
+
+#tabDiv{
+  position: relative;
+}
+/* 탭 */
+main #tabUl {
+  position: absolute;  
+  top: 30px;
+  left: 15px;
+}
+main #tabUl > li {
+  float: left;
+  border: 1px solid #555555;
+  width: 80px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+}
+main #recent {
+  position: absolute;
+  top: 55px;
+  left: 15px;
+}
+main #recent td{
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 300px;
+  line-height: 20px;
+}
+.red{
+  color:red;
+}
