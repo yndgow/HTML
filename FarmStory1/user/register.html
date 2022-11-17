@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        // let url = "https://jsonplaceholder.typicode.com/posts";
+        // let url2 = "./test.json"
+        // fetch(url2, {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //     },
+        //     body
+        // })
+        // .then(res => res.json())
+        // .then(data => console.log(data.name))
+        // .catch((error) => console.log("error",error));
+
+        // document.addEventListener("DOMContentLoaded", function(){
+        //     const checkUid = document.getElementById("checkUid");
+        //     let uid = document.getElementById("uid");
+        //     checkUid.addEventListener("click", function(){
+        //         fetch("./proc/checkUid.jsp?uid="+uid.value)
+        //         .then(res => res.json())
+        //         .then(data => console.log(data.result));
+        //     });
+        // });
+        // document.addEventListener("DOMContentLoaded", function(){
+        //     let result = document.getElementsByClassName("result");
+        //     setTimeout(() => {
+        //         result[0].textContent='no';    
+        //     }, 1000);
+            
+        // })
+        
+    $(function(){
+        let result = $('.result');
+        console.log(result);
+        $('#testBtn').click(function(){
+            result.text('no');
+        });
+
+    });  
+    </script>
+</head>
+<body>
+    <input type="text" id="nick" value="test">
+    <p class="result">test</p>
+    <button id="testBtn">버튼</button>
+</body>
+</html>
