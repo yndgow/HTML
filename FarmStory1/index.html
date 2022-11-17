@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <title>팜스토리::메인</title>
     <link rel="stylesheet" href="css/style.css" />
-
   </head>
   <body>
     <div id="wrapper">
@@ -211,13 +210,28 @@
             </ul>
             <table id="recent">
               <tr>
-                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident natus voluptate voluptatibus vero dolorum, quasi numquam animi! Neque alias illo excepturi, doloremque saepe ad dolorum ab autem et, quis impedit.</td>
+                <td>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Provident natus voluptate voluptatibus vero dolorum, quasi
+                  numquam animi! Neque alias illo excepturi, doloremque saepe ad
+                  dolorum ab autem et, quis impedit.
+                </td>
               </tr>
               <tr>
-                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, ipsum cumque nisi exercitationem ratione sed atque consequatur tenetur architecto, est totam sint natus illo accusamus quia iusto assumenda odit eius.</td>
+                <td>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Aspernatur, ipsum cumque nisi exercitationem ratione sed atque
+                  consequatur tenetur architecto, est totam sint natus illo
+                  accusamus quia iusto assumenda odit eius.
+                </td>
               </tr>
               <tr>
-                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores aut totam voluptate ea, consectetur vitae. Recusandae corrupti accusamus molestias perferendis tempore illum dolorem, optio id sit. Minus soluta laudantium similique.</td>
+                <td>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Dolores aut totam voluptate ea, consectetur vitae. Recusandae
+                  corrupti accusamus molestias perferendis tempore illum
+                  dolorem, optio id sit. Minus soluta laudantium similique.
+                </td>
               </tr>
             </table>
           </div>
@@ -240,26 +254,42 @@
       document.addEventListener("DOMContentLoaded", function () {
         let onTab = document.getElementsByClassName("tab");
         console.log(onTab);
-        
-        
-        // onTab[0].addEventListener("click", function(e){
-        //   onTab[0].classList.add("red");
-        //   onTab[1].classList.remove("red");
-        //   onTab[2].classList.remove("red");
 
-        // });
-        // onTab[1].addEventListener("click", function(e){
-        //   onTab[0].classList.remove("red");
-        //   onTab[1].classList.add("red");
-        //   onTab[2].classList.remove("red");
+        onTab[0].addEventListener("click", function (e) {
+          onTab[0].classList.add("red");
+          onTab[1].classList.remove("red");
+          onTab[2].classList.remove("red");
+        });
+        onTab[1].addEventListener("click", function (e) {
+          onTab[0].classList.remove("red");
+          onTab[1].classList.add("red");
+          onTab[2].classList.remove("red");
+        });
+        onTab[2].addEventListener("click", function (e) {
+          onTab[0].classList.remove("red");
+          onTab[1].classList.remove("red");
+          onTab[2].classList.add("red");
 
-        // });
-        // onTab[2].addEventListener("click", function(e){
-        //   onTab[0].classList.remove("red");
-        //   onTab[1].classList.remove("red");
-        //   onTab[2].classList.add("red");
-
-        // });
+          let url = "/FarmStory1/board/proc/noticeProc.jsp";
+          jsonData = {
+            group: "community",
+            cate: "faq",
+          };
+          fetch(url, { method: "post", body: jsonData })
+            .then(function (res) {
+              if (res.ok) {
+                return res.json();
+              } else {
+                alert("네트워크 오류");
+              }
+            })
+            .then(function (json) {
+              console.log(json);
+            })
+            .catch(function (err) {
+              alert(err);
+            });
+        });
       });
     </script>
   </body>
