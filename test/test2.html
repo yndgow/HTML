@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <!-- focusout을 이용한 이벤트 발생 -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .red {
+        color: red;
+      }
+      .blue {
+        color: blue;
+      }
+      .loading{
+        background-image: url("../img/loading.gif");
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let p1 = document.getElementById("pass1");
+        let p2 = document.getElementById("pass2");
+        let result = document.getElementsByClassName("result")[0];
+        function evalPass() {
+          result.textContent = ".........";
+          setTimeout(() => {
+            if (p1.value == p2.value) {
+              result.classList.replace("resultColor", "blue");
+              result.textContent = "일치";
+            } else {
+              result.classList.replace("resultColor", "red");
+              result.textContent = "불일치";
+            }
+          }, 500);
+        }
+        p1.addEventListener("focusout", evalPass);
+        p2.addEventListener("focusout", evalPass);
+        
+      });
+    </script>
+  </head>
+  <body>
+    <input type="text" id="pass1" value="" />
+    <input type="text" id="pass2" value="" />
+    <p class="result resultColor"></p>
+  </body>
+</html>
