@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>팜스토리::메인</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font: 12px 돋움;
+            box-sizing: border-box;
+        }
+        a{
+            text-decoration: none;
+            color: #111;
+        }
+        ul, ol{
+            list-style: none;
+        }
+        #wrapper{
+            width: 980px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        header{
+            position: relative;
+            background-image: url("/FarmStroy2/img/head_top_line.png");
+            background-repeat: no-repeat;
+            
+        }
+        header > #header_menu{
+            position: absolute;
+            right: 0;
+            top: 10px;
+        }
+        #img_logo{
+            width: 190px;
+            display: block;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+        #head_txt{
+            position: absolute;
+            right: 0;
+            top: 60px;
+        }
+        #head_nav > li{
+            float: left;
+            background-image: url("/FarmStroy2/img/head_menu_line.png");
+            background-repeat: no-repeat;
+            padding-top: 15px;
+        }
+        #head_nav > li:nth-child(1) img:hover {content: url(/FarmStroy2/img/head_menu1_ov.png);}
+        #head_nav > li:nth-child(2) img:hover {content: url(/FarmStroy2/img/head_menu2_ov.png);}
+        #head_nav > li:nth-child(3) img:hover {content: url(/FarmStroy2/img/head_menu3_ov.png);}
+        #head_nav > li:nth-child(4) img:hover {content: url(/FarmStroy2/img/head_menu4_ov.png);}
+        #head_nav > li:nth-child(5) img:hover {content: url(/FarmStroy2/img/head_menu5_ov.png);}
+        
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <p id="header_menu">
+                <a href="/FarmStroy2/">HOME | </a>
+                <a href="/FarmStroy2/user/login.do">로그인 | </a>
+                <a href="/FarmStroy2/user/register.do">회원가입 | </a>
+                <a href="/FarmStroy2/user/customer">고객센터</a>
+            </p>
+            <a href="/FarmStroy2/" id="img_logo">
+                <img src="/FarmStroy2/img/logo.png" alt="" id="img_logo2">
+            </a>
+            <img src="/FarmStroy2/img/head_txt_img.png" alt="" id="head_txt">
+            
+            <ul id="head_nav">
+                <li><a href="/FarmStroy2/"><img src="/FarmStroy2/img/head_menu1.png" alt=""></a></li>
+                <li><a href="/FarmStroy2/"><img src="/FarmStroy2/img/head_menu2.png" alt=""></a></li>
+                <li><a href="/FarmStroy2/"><img src="/FarmStroy2/img/head_menu3.png" alt=""></a></li>
+                <li><a href="/FarmStroy2/"><img src="/FarmStroy2/img/head_menu4.png" alt=""></a></li>
+                <li><a href="/FarmStroy2/"><img src="/FarmStroy2/img/head_menu5.png" alt=""></a></li>
+            </ul>
+        </header>
+        <main></main>
+        <footer></footer>
+    </div>    
+</body>
+</html>
