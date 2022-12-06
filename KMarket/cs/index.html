@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>케이마켓 고객센터</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* 메인 */
+        #cs{
+            width: 100%;
+            height: auto;
+        }
+        #cs > .main{
+            width: 100%;
+            height: auto;
+        }
+        #cs > .main > .title{
+            font-size: 56px;
+            text-align: center;
+            margin: 60px 0;
+            color: #222;
+        }
+        #cs > .main > .title > strong{
+            font-size: 56px;
+            color: #45ad5a;
+        }
+        #cs > .main > section{
+            width: 1200px;
+            height: auto;
+            margin: 0 auto;
+            margin-top: 36px;
+            border-top: 1px solid #e9e9e9;
+            padding-top: 10px;
+            box-sizing: border-box;
+        }
+        #cs > .main > section > h1{
+            font-size: 22px;
+            font-weight: bold;
+        }
+        #cs > .main > section > h1 > a{
+            float: right;
+            font-size: 14px;
+            margin-top: 6px;
+            color: #555;
+        }
+        #cs > .main > section > h1 > a::after{
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            content: "";
+            background: url("images/cs_sprites.png") no-repeat;
+            background-position: -230px -276px;
+            background-size: 750px auto;
+            vertical-align: top;
+            margin-left: 6px;
+        }
+        #cs > .main > section > ul{}
+        #cs > .main > section > ul > li{
+            text-indent: 10px;
+            margin-top: 12px;
+        }
+        #cs > .main > section > ul .title{
+            font-size: 18px;
+        }
+        #cs > .main > section > ul > li > p{
+            float: right;
+            margin-right: 10px;
+        }
+        #cs > .main > section > ul .uid{
+            margin-right: 10px;
+        }
+        #cs > .main > section > ul .date{
+            color: #777;
+        }
+        #cs > .main > .faq > ol{
+            width: 1000px;
+            height: auto;
+            margin: 60px auto;
+            overflow: hidden;
+        }
+        #cs > .main > .faq > ol > li{
+            float: left;
+            width: 14.28%;
+            height: 128px;
+            text-align: center;
+        }
+        #cs > .main > .faq > ol > li > a{
+            display: inline-block;
+            width: 90px;
+            height: 90px;
+            box-sizing: border-box;
+            text-align: center;
+            background-image: url("images/cs_sprites.png");
+            background-repeat: no-repeat;
+            background-size: 750px auto;
+        }
+        #cs > .main > .faq > ol > li span{
+            position: relative;
+            top: 100px;
+            font-size: 14px;
+        }
+        #cs > .main > .faq > ol > li:nth-child(1) > a{background-position: 0 0;}
+        #cs > .main > .faq > ol > li:nth-child(2) > a{background-position: -184px 0px;}
+        #cs > .main > .faq > ol > li:nth-child(3) > a{background-position: -92px 0px;}
+        #cs > .main > .faq > ol > li:nth-child(4) > a{background-position: -276px 0;}
+        #cs > .main > .faq > ol > li:nth-child(5) > a{background-position: -368px 0;}
+        #cs > .main > .faq > ol > li:nth-child(6) > a{background-position: -92px -485px;}
+        #cs > .main > .faq > ol > li:nth-child(7) > a{background-position: -644px 0px;}
+
+        #cs > .main > .faq > ol > li:nth-child(1) > a:hover{background-position: 0 -92px;}
+        #cs > .main > .faq > ol > li:nth-child(2) > a:hover{background-position: -184px -92px;}
+        #cs > .main > .faq > ol > li:nth-child(3) > a:hover{background-position: -92px -92px;}
+        #cs > .main > .faq > ol > li:nth-child(4) > a:hover{background-position: -276px -92px;}
+        #cs > .main > .faq > ol > li:nth-child(5) > a:hover{background-position: -368px -92px;}
+        #cs > .main > .faq > ol > li:nth-child(6) > a:hover{background-position: -92px -577px}
+        #cs > .main > .faq > ol > li:nth-child(7) > a:hover{background-position:  -644px -92px;}
+
+        #cs > .main > .qna > .ask{
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-left: 10px;
+            margin-top: 10px;
+            color: #0078ff;
+        }
+
+        #cs > .main > .tel{
+            overflow: hidden;
+        }
+        #cs > .main > .tel > article{
+            float: left;
+            width: 50%;
+            height: 300px;
+            padding: 16px;
+            box-sizing: border-box;
+        }
+        #cs > .main > .tel > article > div{
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        #cs > .main > .tel > article h3{
+            font-size: 20px;
+            font-weight: bold;
+            color: #111;
+            margin-bottom: 12px;
+        }
+        #cs > .main > .tel > article p{
+            margin-bottom: 16px;
+        }
+        #cs > .main > .tel > article span{
+            font-size: 14px;
+        }
+        #cs > .main > .tel > article strong{
+            font-size: 26px;
+            font-weight: bold;
+            margin-right: 6px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+        }
+        #cs > .main > .tel > article a{
+            font-size: 26px;
+            font-weight: bold;
+            margin-right: 6px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="top">
+                <div>
+                    <p>
+                        <a href="#">로그인</a>
+                        <a href="#">회원가입</a>
+                        <a href="#">마이페이지</a>
+                        <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>장바구니</a>
+                    </p>
+                </div>
+            </div>
+            <div class="logo">
+                <div>
+                    <a href="#">
+                        <img src="./images/logo.png" alt="로고">
+                        고객센터
+                    </a>
+                </div>
+            </div>
+        </header>
+        <section id="cs">
+            <div class="main">
+                <h1 class="title"><strong>케이마켓</strong>이 도와드릴게요!</h1>
+                <section class="notice">
+                    <h1>공지사항<a href="#">전체보기</a></h1>
+                    <ul>
+                        <li>
+                            <a href="#" class="title">[안내] 해외결제 사칭 문자 주의</a>
+                            <span class="date">22.10.31</span>
+                        </li>
+                        <li>
+                            <a href="#" class="title">[안내] 해외결제 사칭 문자 주의</a>
+                            <span class="date">22.10.31</span>
+                        </li>
+                        <li>
+                            <a href="#" class="title">[안내] 해외결제 사칭 문자 주의</a>
+                            <span class="date">22.10.31</span>
+                        </li>
+                        <li>
+                            <a href="#" class="title">[안내] 해외결제 사칭 문자 주의</a>
+                            <span class="date">22.10.31</span>
+                        </li>
+                        <li>
+                            <a href="#" class="title">[안내] 해외결제 사칭 문자 주의</a>
+                            <span class="date">22.10.31</span>
+                        </li>
+                    </ul>
+                </section>
+                <section class="faq">
+                    <h1>자주 묻는 질문<a href="#">전체보기</a></h1>
+                    <ol>
+                        <li>
+                            <a href="#"><span>회원</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>쿠폰/이벤트</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>주문/결제</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>배송</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>취소/반품/교환</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>여행/숙박/항공</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>안전거래</span></a>
+                        </li>
+                    </ol>
+                </section>
+                <section class="qna">
+                    <h1>문의하기<a href="#">전체보기</a></h1>
+                    <ul>
+                        <li>
+                            <a href="#" class="title">[회원] 개인회원과 법인회원에 차이가 있나요?</a>
+                            <p>
+                                <span class="uid">als***</span>
+                                <span class="date">22.12.05</span>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="#" class="title">[쿠폰/이벤트] 스마일포인트는 어디서 사용하나요?</a>
+                            <p>
+                                <span class="uid">als***</span>
+                                <span class="date">22.12.05</span>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="#" class="title">[주문/결제] 신용카드 결제 중 오류가 난 경우 어떻게 하나요?</a>
+                            <p>
+                                <span class="uid">als***</span>
+                                <span class="date">22.12.05</span>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="#" class="title">[배송] 주문한 상품은 언제 배송되나요?</a>
+                            <p>
+                                <span class="uid">als***</span>
+                                <span class="date">22.12.05</span>
+                            </p>
+                        </li>
+                        <li>
+                            <a href="#" class="title">[취소/반품/교환] 주문을 취소하고 싶어요.</a>
+                            <p>
+                                <span class="uid">als***</span>
+                                <span class="date">22.12.05</span>
+                            </p>
+                        </li>
+                    </ul>
+                    <a href="#" class="ask">문의글 작성 ></a>
+                </section>
+                <section class="tel">
+                    <h1>1:1 상담이 필요하신가요?</h1>
+                    <article>
+                        <div>
+                            <h3>고객센터 이용안내</h3>
+                            <p>
+                                <span>일반회원/비회원</span>
+                                <br>
+                                <strong>1566-0001</strong>
+                                <span>(평일 09:00 ~ 18:00)</span>
+                            </p>
+                            <p>
+                                <span>스마일클럽 전용</span>
+                                <br>
+                                <strong>1566-0002</strong>
+                                <span>(365일 09:00 ~ 18:00)</span>
+                            </p>
+                        </div>
+                    </article>
+                    <article>
+                        <div>
+                            <h3>판매상담 이용안내</h3>
+                            <p>
+                                <span>판매고객</span>
+                                <br>
+                                <strong>1566-5700</strong>
+                                <span>(평일 09:00 ~ 18:00)</span>
+                            </p>
+                            <p>
+                                <a href="#">판매자 가입 및 서류 접수 안내 〉</a>
+                            </p>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
