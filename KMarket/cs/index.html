@@ -4,168 +4,6 @@
     <meta charset="UTF-8">
     <title>케이마켓 고객센터</title>
     <link rel="stylesheet" href="./css/style.css">
-    <style>
-        /* 메인 */
-        #cs{
-            width: 100%;
-            height: auto;
-        }
-        #cs > .main{
-            width: 100%;
-            height: auto;
-        }
-        #cs > .main > .title{
-            font-size: 56px;
-            text-align: center;
-            margin: 60px 0;
-            color: #222;
-        }
-        #cs > .main > .title > strong{
-            font-size: 56px;
-            color: #45ad5a;
-        }
-        #cs > .main > section{
-            width: 1200px;
-            height: auto;
-            margin: 0 auto;
-            margin-top: 36px;
-            border-top: 1px solid #e9e9e9;
-            padding-top: 10px;
-            box-sizing: border-box;
-        }
-        #cs > .main > section > h1{
-            font-size: 22px;
-            font-weight: bold;
-        }
-        #cs > .main > section > h1 > a{
-            float: right;
-            font-size: 14px;
-            margin-top: 6px;
-            color: #555;
-        }
-        #cs > .main > section > h1 > a::after{
-            display: inline-block;
-            width: 18px;
-            height: 18px;
-            content: "";
-            background: url("images/cs_sprites.png") no-repeat;
-            background-position: -230px -276px;
-            background-size: 750px auto;
-            vertical-align: top;
-            margin-left: 6px;
-        }
-        #cs > .main > section > ul{}
-        #cs > .main > section > ul > li{
-            text-indent: 10px;
-            margin-top: 12px;
-        }
-        #cs > .main > section > ul .title{
-            font-size: 18px;
-        }
-        #cs > .main > section > ul > li > p{
-            float: right;
-            margin-right: 10px;
-        }
-        #cs > .main > section > ul .uid{
-            margin-right: 10px;
-        }
-        #cs > .main > section > ul .date{
-            color: #777;
-        }
-        #cs > .main > .faq > ol{
-            width: 1000px;
-            height: auto;
-            margin: 60px auto;
-            overflow: hidden;
-        }
-        #cs > .main > .faq > ol > li{
-            float: left;
-            width: 14.28%;
-            height: 128px;
-            text-align: center;
-        }
-        #cs > .main > .faq > ol > li > a{
-            display: inline-block;
-            width: 90px;
-            height: 90px;
-            box-sizing: border-box;
-            text-align: center;
-            background-image: url("images/cs_sprites.png");
-            background-repeat: no-repeat;
-            background-size: 750px auto;
-        }
-        #cs > .main > .faq > ol > li span{
-            position: relative;
-            top: 100px;
-            font-size: 14px;
-        }
-        #cs > .main > .faq > ol > li:nth-child(1) > a{background-position: 0 0;}
-        #cs > .main > .faq > ol > li:nth-child(2) > a{background-position: -184px 0px;}
-        #cs > .main > .faq > ol > li:nth-child(3) > a{background-position: -92px 0px;}
-        #cs > .main > .faq > ol > li:nth-child(4) > a{background-position: -276px 0;}
-        #cs > .main > .faq > ol > li:nth-child(5) > a{background-position: -368px 0;}
-        #cs > .main > .faq > ol > li:nth-child(6) > a{background-position: -92px -485px;}
-        #cs > .main > .faq > ol > li:nth-child(7) > a{background-position: -644px 0px;}
-
-        #cs > .main > .faq > ol > li:nth-child(1) > a:hover{background-position: 0 -92px;}
-        #cs > .main > .faq > ol > li:nth-child(2) > a:hover{background-position: -184px -92px;}
-        #cs > .main > .faq > ol > li:nth-child(3) > a:hover{background-position: -92px -92px;}
-        #cs > .main > .faq > ol > li:nth-child(4) > a:hover{background-position: -276px -92px;}
-        #cs > .main > .faq > ol > li:nth-child(5) > a:hover{background-position: -368px -92px;}
-        #cs > .main > .faq > ol > li:nth-child(6) > a:hover{background-position: -92px -577px}
-        #cs > .main > .faq > ol > li:nth-child(7) > a:hover{background-position:  -644px -92px;}
-
-        #cs > .main > .qna > .ask{
-            display: inline-block;
-            font-size: 16px;
-            font-weight: bold;
-            margin-left: 10px;
-            margin-top: 10px;
-            color: #0078ff;
-        }
-
-        #cs > .main > .tel{
-            overflow: hidden;
-        }
-        #cs > .main > .tel > article{
-            float: left;
-            width: 50%;
-            height: 300px;
-            padding: 16px;
-            box-sizing: border-box;
-        }
-        #cs > .main > .tel > article > div{
-            width: 100%;
-            height: 100%;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        #cs > .main > .tel > article h3{
-            font-size: 20px;
-            font-weight: bold;
-            color: #111;
-            margin-bottom: 12px;
-        }
-        #cs > .main > .tel > article p{
-            margin-bottom: 16px;
-        }
-        #cs > .main > .tel > article span{
-            font-size: 14px;
-        }
-        #cs > .main > .tel > article strong{
-            font-size: 26px;
-            font-weight: bold;
-            margin-right: 6px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
-        }
-        #cs > .main > .tel > article a{
-            font-size: 26px;
-            font-weight: bold;
-            margin-right: 6px;
-        }
-
-    </style>
 </head>
 <body>
     <div id="wrapper">
@@ -193,7 +31,7 @@
             <div class="main">
                 <h1 class="title"><strong>케이마켓</strong>이 도와드릴게요!</h1>
                 <section class="notice">
-                    <h1>공지사항<a href="#">전체보기</a></h1>
+                    <h1>공지사항<a href="./notice/list.html">전체보기</a></h1>
                     <ul>
                         <li>
                             <a href="#" class="title">[안내] 해외결제 사칭 문자 주의</a>
@@ -320,6 +158,31 @@
                 </section>
             </div>
         </section>
+        <footer>
+            <ul>
+              <li><a href="#">회사소개</a></li>
+              <li><a href="#">서비스이용약관</a></li>
+              <li><a href="#">개인정보처리방침</a></li>
+              <li><a href="#">전자금융거래약관</a></li>
+            </ul>
+            <div>
+              <p><img src="../images/footer_logo.png" alt="로고" /></p>
+              <p>
+                <strong>(주)KMARKET</strong><br />
+                부산시 강남구 테헤란로 152 (역삼동 강남파이낸스센터)<br />
+                대표이사 : 홍길동<br />
+                사업자등록번호 : 220-81-83676 사업자정보확인<br />
+                통신판매업신고 : 강남 10630호 Fax : 02-589-8842
+              </p>
+              <p>
+                <strong>고객센터</strong><br />
+                Tel : 1234-5678 (평일 09:00~18:00)<br />
+                스마일클럽/SVIP 전용 : 1522-5700 (365일 09:00~18:00)<br />
+                경기도 부천시 원미구 부일로 223(상동) 투나빌딩 6층<br />
+                Fax : 051-123-4567 | Mail : kmarket@kmarket.co.kr<br />
+              </p>
+            </div>
+          </footer>
     </div>
 </body>
 </html>

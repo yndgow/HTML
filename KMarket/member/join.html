@@ -3,25 +3,19 @@
 <head>
     <meta charset="UTF-8">    
     <title>케이마켓::대한민국 1등 온라인 쇼핑몰</title>    
-    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico" />
+    <script src="https://kit.fontawesome.com/e8f010a863.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 </head>
 <body>
     <div id="wrapper">
         <header>
             <div class="top">
                 <div>
-                    <a href="./member/login.html">로그인</a>
-                    <a href="#">회원가입</a>
+                    <a href="./login.html">로그인</a>
+                    <a href="./signup.html">회원가입</a>
                     <a href="#">마이페이지</a>
-                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;장바구니</a>
+                    <a href="#"><i class="fa-solid fa-cart-shopping"></i>&nbsp;장바구니</a>
                 </div>
             </div>
             <div class="logo">
@@ -45,7 +39,7 @@
                         <img src="./img/member_join_tit_seller.gif" alt="판매회원 가입">
                         <div class="txt">
                             <img src="./img/member_join_txt_seller.gif" alt="개인 구매회원">
-                            <a href="./member/signup.do?type=seller"><img src="./img/member_join_btn2.gif" alt="회원가입"></a>
+                            <a href="./member/signup.html"><img src="./img/member_join_btn2.gif" alt="회원가입"></a>
                         </div>
                     </div>
                 </div>
@@ -78,6 +72,9 @@
                 </p>
             </div>              
         </footer>
+        <div class="topBtn" onclick="window.scrollTo(0,0);">
+            <img src="./img/top.png" alt="탑으로" />
+        </div>
     </div>    
 </body>
 </html>

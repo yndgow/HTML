@@ -1,310 +1,836 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    font: 12px 고딕;
-  }
-  header {
-    width: 100%;
-    height: 197px;
-  }
-  a {
-    text-decoration: none;
-    color: #111;
-  }
-  ol,
-  li {
-    list-style-type: none;
-  }
-  .top {
-    border-bottom: 1px solid #e9e9e9;
-    box-sizing: border-box;
-  }
-  .top > div {
-    height: 100%;
-    width: 1200px;
-    text-align: right;
-    margin: 0 auto;
+  margin: 0px;
+  padding: 0px;
+  font: 12px 고딕;
+}
+#wrapper {
+  width: 100%;
+}
+header {
+  width: 100%;
+  height: 197px;
+}
+a {
+  text-decoration: none;
+  color: #111;
+}
+ol,
+li {
+  list-style-type: none;
+}
+input,
+textarea {
+  outline: none;
+}
+.top {
+  border-bottom: 1px solid #e9e9e9;
+  box-sizing: border-box;
+}
+.top > div {
+  height: 100%;
+  width: 1200px;
+  text-align: right;
+  margin: 0 auto;
 
-    box-sizing: border-box;
-  }
-  .top > div > a {
-    display: inline-block;
-    padding: 0 10px;
-    line-height: 35px;
-    border-left: 1px solid #e9e9e9;
-    box-sizing: border-box;
-  }
-  .top > div > a:last-child {
-    border-right: 1px solid #e9e9e9;
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
+.top > div > a {
+  display: inline-block;
+  padding: 0 10px;
+  line-height: 35px;
+  border-left: 1px solid #e9e9e9;
+  box-sizing: border-box;
+}
+.top > div > a:last-child {
+  border-right: 1px solid #e9e9e9;
+  box-sizing: border-box;
+}
 
-  .logo {
-    height: 115px;
-    border: 1px solid #e9e9e9;
-    box-sizing: border-box;
-  }
-  .logo > div {
-    width: 1200px;
-    height: auto;
-    margin: 0 auto;
-    position: relative;
-  }
-  .logo > div > a > img {
-    position: absolute;
-    top: 30px;
-  }
-  .logo form.search {
-    position: relative;
-    top: 40px;
-    left: 430px;
-    width: 100%;
-  }
-  .logo .search > input {
-    width: 400px;
-    height: 35px;
-    border: 1px solid #e9e9e9;
-    box-sizing: border-box;
-    border-radius: 5px;
-  }
-  .logo .search > button#search {
-    position: absolute;
-    top: 10px;
-    left: 375px;
-    background-color: rgba(0, 0, 0, 0);
-    border: 0px;
-    box-sizing: border-box;
-  }
-  .logo .search > #search > i {
-    font-size: 20px;
-  }
+.logo {
+  height: 115px;
+  border: 1px solid #e9e9e9;
+  box-sizing: border-box;
+}
+.logo > div {
+  width: 1200px;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+}
+.logo > div > a > img {
+  position: absolute;
+  top: 30px;
+}
+.logo form.search {
+  position: absolute;
+  top: 40px;
+  left: 430px;
+  width: auto;
+}
+.logo .search > input {
+  width: 400px;
+  height: 35px;
+  font-size: 14px;
+  padding: 0 10px;
+  border: 1px solid #e9e9e9;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+}
+.logo .search > button#search {
+  position: absolute;
+  top: 10px;
+  left: 375px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+  box-sizing: border-box;
+}
+.logo .search > #search > i {
+  font-size: 20px;
+}
 
-  /* 리스트 페이지 헤더 nav 추가 */
-  header > .menu {
-    height: 46px;
-    background: #f2f2f2;
-    border-bottom: 1px solid #ddd;
-    box-sizing: border-box;
-  }
+/* 리스트 페이지 헤더 nav 추가 */
+header > .menu {
+  height: 46px;
+  background: #f2f2f2;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+}
 
-  header > .menu > div {
-    width: 1200px;
-    height: 100%;
-    margin: 0 auto;
-  }
-  header > .menu > div > ul:nth-child(1) {
-    float: left;
-  }
-  header > .menu > div > ul:nth-child(2) {
-    float: right;
-  }
-  header > .menu > div > ul {
-    display: inline-block;
-    margin-top: 16px;
-  }
-  header > .menu > div > ul > li {
-    float: left;
-  }
+header > .menu > div {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+header > .menu > div > ul:nth-child(1) {
+  float: left;
+}
+header > .menu > div > ul:nth-child(2) {
+  float: right;
+}
+header > .menu > div > ul {
+  display: inline-block;
+  margin-top: 16px;
+}
+header > .menu > div > ul > li {
+  float: left;
+}
 
-  header > .menu > div > ul > li > a {
-    border-left: 1px solid #e9e9e9;
-    padding: 0 10px;
-  }
+header > .menu > div > ul > li > a {
+  border-left: 1px solid #e9e9e9;
+  padding: 0 10px;
+}
 
-  header > .menu > div > ul > li > a:last-child {
-    border-right: 1px solid #e9e9e9;
-  }
+header > .menu > div > ul > li > a:last-child {
+  border-right: 1px solid #e9e9e9;
+}
 
-  /* 상품 list main */
-  main {
-    width: 1200px;
-    height: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-  }
+/* 상품 list main */
+main {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
 
-  main#procuct {
-  }
+/* List main aside */
+main > aside {
+  float: left;
+  width: 215px;
+  height: 100%;
+}
+main .category {
+  width: 100%;
+  height: 425px;
+  background: #333949;
+  position: relative;
+}
+main .category > li:first-child {
+  padding: 0 20px;
+  color: #fff;
+  line-height: 40px;
+}
 
-  /* List main aside */
-  main > aside {
-    float: left;
-    width: 215px;
-    height: 100%;
-  }
-  main .category {
-    width: 100%;
-    height: 425px;
-    background: #333949;
-    position: relative;
-  }
-  main .category > li:first-child {
-    padding: 0 20px;
-    color: #fff;
-    line-height: 40px;
-  }
+main .category > li {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  color: #ccc;
+  font-size: 13px;
+  font-weight: bold;
+  border-bottom: 1px solid #2b313f;
+  box-sizing: border-box;
+}
 
-  main .category > li {
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    color: #ccc;
-    font-size: 13px;
-    font-weight: bold;
-    border-bottom: 1px solid #2b313f;
-    box-sizing: border-box;
-  }
+main ul.category i {
+  width: 22px;
+  font-size: 16px;
+  margin-right: 12px;
+}
+main ul.category a i:nth-child(2) {
+  width: 22px;
+  position: absolute;
+  right: 0px;
+  top: 14px;
+  margin-right: 0px;
+  font-size: 12px;
+}
+main ul.category > li > a:hover {
+  background: #2b313f;
+  color: #fff;
+}
+main ul.category > li > a {
+  display: block;
+  padding: 0 20px;
+  line-height: 40px;
+  color: #ccc;
+  font-size: 13px;
+  font-weight: bold;
+  position: relative;
+}
 
-  main ul.category i {
-    width: 22px;
-    font-size: 16px;
-    margin-right: 12px;
-  }
-  main ul.category a i:nth-child(2) {
-    width: 22px;
-    position: absolute;
-    right: 0px;
-    top: 14px;
-    margin-right: 0px;
-    font-size: 12px;
-  }
-  main ul.category > li > a:hover {
-    background: #2b313f;
-    color: #fff;
-  }
-  main ul.category > li > a {
-    display: block;
-    padding: 0 20px;
-    line-height: 40px;
-    color: #ccc;
-    font-size: 13px;
-    font-weight: bold;
-    position: relative;
-  }
+main .category li > ol {
+  width: 200px;
+  height: 425px;
+  visibility: hidden;
+  background-color: #fff;
+  border: 1px solid #000;
+  position: absolute;
+  right: -200px;
+  top: 0;
+  z-index: 100;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
 
-  main .category li > ol {
-    width: 200px;
-    height: 425px;
-    visibility: hidden;
-    background-color: #fff;
-    border: 1px solid #000;
-    position: absolute;
-    right: -200px;
-    top: 0;
-    z-index: 100;
-    padding-left: 10px;
-    box-sizing: border-box;
-  }
+main .category li > ol > li {
+  line-height: 30px;
+}
+main .category li > ol > li > a {
+  color: #000;
+}
+main .category li > ol > li > a:hover {
+  color: #41ab47;
+  text-decoration: underline;
+}
+/* list main section */
+section {
+  margin-left: 230px;
+}
+/* nav */
+section > nav {
+  width: 100%;
+  height: 36px;
+  margin-top: 20px;
+  border-bottom: 1px solid #000;
+  box-sizing: border-box;
+}
+section > nav > h1 {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+}
+section > nav > p {
+  float: right;
+  margin-top: 10px;
+}
+ul.sort {
+  border-top: 2px solid #000;
+  margin-top: 15px;
+  width: 100%;
+  height: 100%;
+}
+ul.sort > li {
+  float: left;
+  display: block;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+ul.sort > li > a {
+  padding: 0 10px;
+  border-right: 1px solid #e9e9e9;
+  box-sizing: border-box;
+}
+ul.sort > li > a.on {
+  font-weight: bold;
+}
+/* table 시작*/
+table {
+  width: 100%;
+  border-top: 1px solid #e9e9e9;
+  height: auto;
+}
+table tr {
+}
+table tr > td {
+}
+table tr > td > img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+/* table 끝 */
 
-  main .category li > ol > li {
-    line-height: 30px;
-  }
-  main .category li > ol > li >a{
-    color: #000;
-  }
-  main .category li > ol > li >a:hover{
-    color: #41ab47;
-    text-decoration: underline;
-  }
-  /* list main section */
-  section{
-    margin-left: 230px;
-  }
-  /* nav */
-  section > nav {
-    width: 100%;
-    height: 36px;
-    margin-top: 20px;
-    border-bottom: 1px solid #000;
-    box-sizing: border-box;
-  }
-  section > nav > h1 {
-    display: inline-block;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  section > nav > p {
-    float: right;
-    margin-top: 10px;
-  }
-  ul.sort{
-    border-top: 2px solid #000;
-    margin-top: 15px;
-    width: 100%;
-    height: 100%;
-  }
-  ul.sort > li{
-    float: left;
-    display: block;
-    padding: 10px 0;
-    box-sizing: border-box;
-  }
-  ul.sort > li > a{
-    padding: 0 10px;
-    border-right: 1px solid #e9e9e9;
-    box-sizing: border-box;
-  }
-  /* table 시작*/
-  table{
-    width: 100%;
-    border-top: 1px solid #e9e9e9;
-    height: auto;
-  }
-  table tr{}
-  table tr > td {}
-  table tr > td > img{
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-  }
-  /* table 끝 */
+/* 상품 list main 끝 */
+.list > table tr > td {
+  border-bottom: 1px solid #ececec;
+  box-sizing: border-box;
+}
 
-  /* 상품 list main 끝 */
+.list > table tr > td:nth-child(1) {
+  width: 20%;
+}
+.list > table tr > td:nth-child(2) {
+  width: 40%;
+}
+.list > table tr > td:nth-child(3) {
+  width: 20%;
+}
+.list > table tr > td:nth-child(4) {
+  width: 20%;
+}
+.list > table td > h1 {
+  font-size: 16px;
+  font-weight: bold;
+}
+/* 상품 이미지 */
+.list > table tr > td:nth-child(1) img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+/* 현재가격 */
+ins {
+  font-size: 16px;
+  text-decoration: none;
+}
 
-  footer {
-    width: 100%;
-    height: 192px;
-    background: #f8f8f8;
-    border-top: 1px solid #e9e9e9;
-    box-sizing: border-box;
-  }
-  footer > ul {
-    width: 1200px;
-    height: 39px;
-    margin: 0 auto;
-    padding: 15px 0;
-    border-bottom: 1px solid #e9e9e9;
-    box-sizing: border-box;
-    text-align: center;
-  }
-  footer > ul > li {
-    display: inline-block;
-    border-left: 1px solid #d7d7d7;
-    box-sizing: border-box;
-    padding: 0 10px;
-  }
-  footer > ul > li:last-child {
-    border-right: 1px solid #d7d7d7;
-  }
-  footer > div {
-    width: 1200px;
-    margin: 0 auto;
-    padding-top: 20px;
-    box-sizing: border-box;
-  }
-  footer > div > p {
-    float: left;
-    margin-right: 50px;
-    line-height: 15px;
-    font-size: 11px;
-    color: #676767;
-  }
-  footer > div > p > strong {
-    font-weight: bold;
-    line-height: 25px;
-  }
-  div.topBtn {
-    position: fixed;
-    bottom: 5px;
-    right: 300px;
-  }
+/* 원래가격 */
+del {
+  color: rgb(170, 170, 170);
+}
+
+/* 할인율 */
+.discount {
+  margin-left: 8px;
+  font-size: 10px;
+  color: #eb000a;
+}
+
+/* 무료배송 */
+/* .list > table tr .freede {
+  width: 55px;
+  height: 13px;
+  object-fit: cover;
+} */
+.freede {
+  width: 55px;
+  height: 13px;
+  object-fit: cover;
+}
+/* 판매자등급 */
+/* .list > table tr .sellerTd .dealer {
+  width: 54px;
+  height: 13px;
+  object-fit: cover;
+  margin-top: 8px;
+  margin-bottom: 8px;
+} */
+.dealer {
+  width: 54px;
+  height: 14px;
+  object-fit: cover;
+  margin: 8px 0;
+}
+/* 고객평가 ex)고객만족우수 */
+.customer_eval {
+  width: 68px;
+  height: 14px;
+  object-fit: cover;
+  margin: 8px 0;
+}
+/* 별점 */
+.rating {
+  font-size: 11px;
+  background-image: url(../img/rating_star.png);
+  background-repeat: no-repeat;
+  background-position: 36px 0px;
+  background-size: auto 100%;
+}
+/* 꽉찬 별점 이미지 위치 */
+.star1 {
+  width: 55px;
+}
+.star2 {
+  width: 70px;
+}
+.star3 {
+  width: 85px;
+}
+.star4 {
+  width: 100px;
+}
+/* table 끝 */
+/* 페이징 paging */
+.paging {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding: 30px 0;
+}
+.paging > .prev {
+}
+.paging > .prev > a {
+}
+.paging > .num {
+}
+.paging > .num > a {
+  display: inline-block;
+  width: 14px;
+  padding: 8px 9px;
+  border: 1px solid rgb(196, 196, 196);
+}
+.paging > .num > a.on {
+  color: red;
+}
+.paging > .next > a {
+}
+/* product list main 끝 */
+/* product view main 시작  */
+.view > .info {
+  overflow: hidden;
+  margin-top: 30px;
+}
+.view > .info > div {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+.view > .info > div > img {
+  width: 460px;
+  height: 460px;
+  object-fit: cover;
+}
+.view > .info > .summary {
+  width: 50%;
+  height: 100%;
+}
+.view > .info > .summary > div {
+  overflow: hidden;
+  width: 100%;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+.view > .info > .summary > .view_seller > h1 {
+  float: left;
+  color: #0231a6;
+  font-size: 18px;
+  font-weight: bold;
+}
+.view > .info > .summary > .view_seller > h2 {
+  float: right;
+  margin-top: 8px;
+  color: #777;
+}
+.view > .info > .summary > .view_content {
+}
+.view > .info > .summary > .view_content > p:nth-child(1) {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.view > .info > .summary > .view_content > .view_star {
+  float: left;
+  width: 90px;
+  height: 20px;
+  background-image: url("../img/ico_rating_star.png");
+  background-repeat: no-repeat;
+}
+
+.view > .info > .summary > .view_content > a {
+  text-decoration: underline;
+  color: blue;
+}
+/* 비어있는 별점 1~5 코드 addclass 하면 원하는 별점 이미지 로딩*/
+.star2-1 {
+  background-position: 0 -40px;
+}
+.star2-2 {
+  background-position: 0 -80px;
+}
+.star2-3 {
+  background-position: 0 -120px;
+}
+.star2-4 {
+  background-position: 0 -160px;
+}
+.star2-5 {
+  background-position: 0 -200px;
+}
+
+.view > .info > .summary > .view_price > .ori_price {
+  font-size: 18px;
+  color: #aaa;
+}
+.view > .info > .summary > .view_price > .cur_price {
+  font-size: 26px;
+  font-weight: bold;
+}
+.view > .info > .summary > .view_price > .discount {
+  font-size: 16px;
+}
+.view > .info > .summary > .view_delivery > p {
+  color: #000;
+  font-size: 14px;
+}
+.view > .info > .summary > .view_delivery .free {
+  color: #2e8de5;
+  font-size: 16px;
+}
+.view > .info > .summary > .view_delivery > p:nth-child(2) {
+  color: #aaa;
+}
+.view > .info > .summary > .view_benefits > p {
+  display: inline-block;
+  margin: 0 30px;
+}
+.view > .info > .summary > .view_made > p {
+  font-size: 16px;
+}
+.view > .info > .summary > .view_smile > img {
+  width: 100%;
+}
+.view > .info > .summary > .view_smile {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  border-bottom: none;
+}
+.view > .info > .summary > .view_quantity {
+  position: relative;
+  border-bottom: none;
+  width: 100px;
+  height: 40px;
+}
+.view > .info > .summary > .view_quantity > button {
+  width: 21px;
+  height: 21px;
+  border: none;
+  font-size: 0;
+  background: none;
+  background: url("../img/ico_sprites.png");
+  position: absolute;
+}
+.view > .info > .summary > .view_quantity > .descBtn {
+  background-position: 0px -74px;
+}
+.view > .info > .summary > .view_quantity > input {
+  position: absolute;
+  width: 30px;
+  height: 21px;
+  left: 30px;
+  font-size: 14px;
+  border: 1px solid #ececec;
+  text-align: center;
+}
+.view > .info > .summary > .view_quantity > .incrBtn {
+  background-position: -48px -74px;
+  left: 70px;
+}
+.view > .info > .summary > .view_total_price {
+  border-bottom: none;
+}
+.view > .info > .summary > .view_total_price > p {
+  font-size: 16px;
+  text-align: right;
+}
+.view > .info > .summary > .view_total_price > p > span {
+  font-size: 24px;
+  font-weight: bold;
+}
+.view > .info > .summary > .view_button {
+  border-bottom: none;
+}
+.view > .info > .summary > .view_button > button {
+  width: 49%;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 2px;
+}
+.view > .info > .summary > .view_button > .btnCart {
+  background: none;
+  border: 1px solid #d9d9d9;
+}
+.view > .info > .summary > .view_button > .btnBuy {
+  background: #2e8de5;
+  border: 1px solid #217fd7;
+  color: #fff;
+}
+button {
+  cursor: pointer;
+}
+
+/* article nav 공통 css 시작 */
+.view > article {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+article > nav {
+  overflow: hidden;
+  border-bottom: 1px solid #a4a9b0;
+  margin-bottom: 10px;
+  padding: 6px 0;
+  box-sizing: border-box;
+}
+article > nav > h1 {
+  font-size: 18px;
+  font-weight: bold;
+}
+/* article nav 공통 css 끝 */
+
+/* 상품정보 detail */
+.view > .detail > nav > img {
+  width: 860px;
+  height: 460px;
+  object-fit: cover;
+}
+/* 상품정보제공고시 notice */
+.view > .notice > nav > h1 > span {
+  color: #777;
+  margin-left: 10px;
+}
+.view > .notice > table {
+  border-collapse: collapse;
+}
+.view > .notice > table tr:nth-child(7) {
+  border-bottom: 1px solid rgb(236, 236, 236);
+}
+.view > .notice > table tr > td {
+  padding: 5px 0 6px 21px;
+  font-size: 14px;
+}
+.view > .notice > table tr > td:nth-child(1) {
+  width: 20%;
+  color: #222;
+}
+.view > .notice > table tr > td:nth-child(2) {
+  color: #777;
+}
+.view > .notice > p.noticeWriting {
+  background: #fafafa;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #757c8a;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+/* 상품리뷰 review */
+.view > .review > ul {
+  padding-top: 12px;
+  border-bottom: 1px solid #ececec;
+  box-sizing: border-box;
+}
+.view > .review > ul > li {
+  color: #555;
+}
+.view > .review > ul > li:nth-child(1) {
+  overflow: hidden;
+}
+.view > .review > ul > li:nth-child(1) > div > h5 {
+  float: left;
+  width: 90px;
+  height: 20px;
+  background-image: url("../img/ico_rating_star.png");
+  background-repeat: no-repeat;
+}
+.view > .review > ul > li:nth-child(1) > div > p {
+  float: right;
+}
+.view > .review > ul > li:nth-child(2) > h3 {
+  margin: 6px 0;
+}
+.view > .review > ul > li:nth-child(3) {
+  font-size: 14px;
+  line-height: 19px;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+/* product view main 끝  */
+
+/* product search main 시작  */
+#product > section.search > .group {
+}
+#product > section.search > .group > h3 {
+  border-bottom: 1px solid rgb(215, 215, 215);
+  color: rgb(17, 17, 17);
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 30px;
+  padding: 10px 15px;
+}
+#product > section.search > .group > h3 > strong {
+  color: rgb(213, 12, 13);
+  font-size: 18px;
+  margin-right: 6px;
+  font-weight: bold;
+}
+#product > section.search > .group > h3 > span {
+  color: rgb(136, 136, 136);
+  font-size: 14px;
+}
+#product > section.search > .group > h3 > span > em {
+  color: rgb(213, 12, 13);
+}
+#product > section.search > .group > form {
+  padding: 10px 10px;
+  border-bottom: 1px solid rgb(215, 215, 215);
+  box-sizing: border-box;
+}
+#product > section.search > .group > form input[type="text"] {
+  width: 150px;
+  height: 30px;
+  border-radius: 2px;
+  border: 1px solid rgb(187, 187, 187);
+  padding: 0 10px;
+}
+#product > section.search > .group > form > input {
+  margin-right: 10px;
+}
+#product > section.search > .group > form > button {
+  height: 30px;
+  padding: 0px 5px;
+  font-weight: bold;
+  background: rgb(213, 12, 12);
+  color: rgb(255, 255, 255);
+  border: 0px;
+}
+
+#product > section.search > .group > form > div {
+  float: right;
+}
+#product > section.search > .group > form > div > label {
+  position: relative;
+  top: -2.5px;
+  margin-left: 3px;
+}
+#product > section.search > .group > form > div > label:nth-of-type(3) {
+  margin-right: 10px;
+}
+#product > section.search > .group > form > div > input[type="text"] {
+  width: 100px;
+}
+#product > section.search > .group > p {
+  padding: 15px;
+  background: rgb(245, 245, 245);
+  color: rgb(115, 115, 115);
+  border-bottom: 1px solid rgb(215, 215, 215);
+}
+
+.list > table tr > td {
+  border-bottom: 1px solid #ececec;
+  box-sizing: border-box;
+}
+
+.search > table tr > td:nth-child(1) {
+  width: 20%;
+}
+.search > table tr > td:nth-child(2) {
+  width: 40%;
+}
+.search > table tr > td:nth-child(3) {
+  width: 20%;
+}
+.search > table tr > td:nth-child(4) {
+  width: 20%;
+}
+.search > table td > h1 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#product > section.search > table {
+  width: 100%;
+  height: auto;
+  border-collapse: collapse;
+}
+#product > section.search > table tr {
+  border-bottom: 1px solid #ececec;
+}
+#product > section.search > table tr > td:nth-child(2) {
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+#product > section.search > table tr > td > a {
+}
+#product > section.search > table tr > td > a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* product search main 끝  */
+
+/* product order main 시작  */
+#product > .order > table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 2px solid #000;
+}
+
+/* product order main 끝  */
+
+/* footer */
+footer {
+  width: 100%;
+  height: 192px;
+  background: #f8f8f8;
+  border-top: 1px solid #e9e9e9;
+  box-sizing: border-box;
+}
+footer > ul {
+  width: 1200px;
+  height: 39px;
+  margin: 0 auto;
+  padding: 15px 0;
+  border-bottom: 1px solid #e9e9e9;
+  box-sizing: border-box;
+  text-align: center;
+}
+footer > ul > li {
+  display: inline-block;
+  border-left: 1px solid #d7d7d7;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+footer > ul > li:last-child {
+  border-right: 1px solid #d7d7d7;
+}
+footer > div {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+footer > div > p {
+  float: left;
+  margin-right: 50px;
+  line-height: 15px;
+  font-size: 11px;
+  color: #676767;
+}
+footer > div > p > strong {
+  font-weight: bold;
+  line-height: 25px;
+}
+div.topBtn {
+  position: fixed;
+  bottom: 5px;
+  right: 300px;
+}
