@@ -255,16 +255,12 @@ ul.sort > li > a.on {
   font-weight: bold;
 }
 /* table 시작*/
-table {
+.list > table {
   width: 100%;
   border-top: 1px solid #e9e9e9;
   height: auto;
 }
-table tr {
-}
-table tr > td {
-}
-table tr > td > img {
+.list > table tr > td > img:nth-child(1) {
   width: 120px;
   height: 120px;
   object-fit: cover;
@@ -783,7 +779,234 @@ article > nav > h1 {
   border-collapse: collapse;
   border-top: 2px solid #000;
 }
+#product > .order > table tr {
+  line-height: 96px;
+  border-top: 1px solid #d3d3d3;
+  border-bottom: 1px solid #d3d3d3;
+}
+#product > .order > table tr > th {
+  height: 40px;
+}
 
+#product > .order > table tr > td {
+  text-align: center;
+}
+#product > .order > table tr > td:nth-child(1) {
+  text-align: left;
+  width: 500px;
+}
+
+#product > .order > table tr > td:nth-child(1) > img {
+  width: 80px;
+  height: 80px;
+  margin: 8px 8px 8px 0;
+  object-fit: cover;
+  vertical-align: top;
+}
+#product > .order > table tr > td:nth-child(1) > div:nth-child(2) {
+  display: inline-block;
+  width: 400px;
+  height: 80px;
+  margin: 8px 0;
+}
+
+#product > .order > table tr > td:nth-child(1) > div:nth-child(2) > p:nth-child(1) {
+  color: #000;
+}
+#product > .order > table tr > td:nth-child(1) > div:nth-child(2) > p:nth-child(3) {
+  color: #777;
+  word-break: break-all;
+}
+#product > .order > table tr > td:last-child {
+  color: #eb000a;
+  font-weight: bold;
+}
+#product > .order > form.order_info {
+  width: 100%;
+  height: auto;
+  margin-top: 15px;
+}
+
+#product > .order > .order_info article > nav {
+  border-bottom: 1px solid #a4a9b0;
+  box-sizing: border-box;
+}
+#product > .order > .order_info article > nav > h1 {
+  font-size: 16px;
+}
+#product > .order > .order_info .delivery_info,
+.discount_info,
+.payment_method,
+.final_payment_info,
+.warning_notice {
+  width: 500px;
+}
+#product > .order > .order_info > div {
+  float: left;
+}
+.final_payment_info {
+  width: 350px;
+  float: right;
+  border: 1px solid #d3d3d3;
+}
+#product > .order > .order_info .delivery_info > table {
+  border: none;
+}
+#product > .order > .order_info .delivery_info > table tr {
+  height: 35px;
+}
+#product > .order > .order_info .delivery_info > table tr td:nth-child(1) {
+  width: 60px;
+  padding-left: 5px;
+  font-size: 13px;
+}
+#product > .order > .order_info .delivery_info > table tr td:nth-child(2) {
+  width: auto;
+}
+#product > .order > .order_info .delivery_info > table tr td:nth-child(2) > input[type="text"] {
+  width: 120px;
+  height: 20px;
+}
+#product > .order > .order_info .delivery_info > table tr:nth-child(4) td:nth-child(2) > input[type="text"] {
+  width: 300px;
+}
+#product > .order > .order_info .delivery_info > table tr:nth-child(5) td:nth-child(2) > input[type="text"] {
+  width: 300px;
+}
+#product > .order > .order_info .delivery_info > table .btnZip {
+  width: 40px;
+  height: 24px;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  background-color: #f0f4f9;
+  border-color: #acc0e0;
+  color: #3371c9;
+  box-sizing: border-box;
+}
+#product > .order > .order_info .discount_info {
+  margin-bottom: 15px;
+}
+/* float 해제 */
+#product > .order > .order_info .discount_info::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+#product > .order > .order_info .discount_info > div:nth-of-type(1) {
+  float: left;
+  margin-left: 5px;
+}
+#product > .order > .order_info .discount_info > div:nth-of-type(1) > p {
+  font-size: 13px;
+}
+#product > .order > .order_info .discount_info > div:nth-of-type(1) > p:last-child {
+  color: #a4a9b0;
+  font-size: 11px;
+  line-height: 25px;
+}
+#product > .order > .order_info .discount_info > div:nth-of-type(2) {
+  float: right;
+}
+#product > .order > .order_info .discount_info > div:nth-of-type(2) > input {
+  height: 20px;
+}
+#product > .order > .order_info .discount_info .pointApplyBtn {
+  width: 40px;
+  height: 24px;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  background-color: #f0f4f9;
+  border-color: #acc0e0;
+  color: #3371c9;
+  box-sizing: border-box;
+}
+#product > .order > .order_info .payment_method {
+}
+#product > .order > .order_info .payment_method > table {
+  width: 100%;
+  border-collapse: separate;
+}
+#product > .order > .order_info .payment_method > table tr:nth-of-type(2n) {
+  vertical-align: top;
+  height: 35px;
+}
+#product > .order > .order_info .payment_method > table tr > td:nth-child(1) {
+  width: 30%;
+}
+#product > .order > .order_info .payment_method > table label {
+  display: inline-block;
+  color: #3a85c8;
+  margin: 6px 0;
+}
+#product > .order > .order_info .payment_method > table input[type="radio"] {
+  position: relative;
+  top: 1.5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+#product > .order > .order_info .payment_method > table input[type="radio"]:checked {
+  background: #3a85c8;
+  border: none;
+}
+#product > .order > .order_info .payment_method > table tr:last-child > td:last-child {
+  position: relative;
+}
+#product > .order > .order_info .payment_method > table img {
+  position: absolute;
+  top: -15px;
+}
+#product > .order > .order_info .warning_notice {
+  background-color: #f7f7f7;
+  padding: 6px;
+  padding-left: 20px;
+  color: #999;
+  box-sizing: border-box;
+  word-break: keep-all;
+  margin-bottom: 20px;
+}
+#product > .order > .order_info .warning_notice > ul > li {
+  list-style-type: disc;
+}
+#product > .order > .order_info .warning_notice > ul > li::marker {
+  font-size: 14px;
+}
+#product > .order > .order_info .final_payment_info {
+  padding: 25px 15px;
+}
+#product > .order > .order_info .final_payment_info > table {
+  width: 100%;
+  height: auto;
+}
+#product > .order > .order_info .final_payment_info > table tr {
+  height: 45px;
+}
+#product > .order > .order_info .final_payment_info > table tr > td {
+  font-size: 14px;
+}
+#product > .order > .order_info .final_payment_info > table tr:last-child > td:nth-child(1) {
+  font-size: 18px;
+}
+#product > .order > .order_info .final_payment_info > table tr:last-child > td:nth-child(2) {
+  font-weight: bold;
+  font-size: 18px;
+  color: #eb000a;
+}
+#product > .order > .order_info .final_payment_info > table tr > td:nth-child(1) {
+}
+#product > .order > .order_info .final_payment_info > table tr > td:nth-child(2) {
+  text-align: right;
+}
+#product > .order > .order_info .final_payment_info > button {
+  width: 100%;
+  height: 55px;
+  margin: 15px 0;
+  color: #fff;
+  background-color: #eb000a;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+}
 /* product order main 끝  */
 
 /* footer */
