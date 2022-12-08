@@ -13,15 +13,8 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/cart.css">
     <script src="./js/script.js"></script>
-    <style>
-      /* cart */
-      .cart {
-        padding: 16px;
-        box-sizing: border-box;
-      }
-
-    </style>
   </head>
   <body>
     <div class="wrapper">
@@ -144,16 +137,18 @@
 
           <form action="#">
             <table>
-              <tr>
-                <th><input type="checkbox" name="all"></th>
-                <th>상품명</th>
-                <th>총수량</th>
-                <th>판매가</th>
-                <th>할인</th>
-                <th>포인트</th>
-                <th>배송비</th>
-                <th>소계</th>
-              </tr>
+              <thead>
+                <tr>
+                  <th><input type="checkbox" name="all"></th>
+                  <th>상품명</th>
+                  <th>총수량</th>
+                  <th>판매가</th>
+                  <th>할인</th>
+                  <th>포인트</th>
+                  <th>배송비</th>
+                  <th>소계</th>
+                </tr>
+              </thead>
               <tr class="empty">
                 <td colspan="7">장바구니에 상품이 없습니다.</td>
               </tr>
@@ -175,6 +170,29 @@
                 <td>1</td>
                 <td>27,000</td>
                 <td>5%</td>
+                <td>270</td>
+                <td>무료배송</td>
+                <td>27,000</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td>
+                  <article>
+                    <a href="#">
+                      <img src="https://via.placeholder.com/80x80" alt="">
+                    </a>
+                    <div>
+                      <h2>
+                        <a href="#">상품명</a>
+                      </h2>
+                      <p>상품설명</p>
+                    </div>
+                  </article>
+                </td>
+                <td>1</td>
+                <td>27,000</td>
+                <td>5%</td>
+                <td>270</td>
                 <td>무료배성</td>
                 <td>27,000</td>
               </tr>
@@ -196,27 +214,7 @@
                 <td>1</td>
                 <td>27,000</td>
                 <td>5%</td>
-                <td>무료배성</td>
-                <td>27,000</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"></td>
-                <td>
-                  <article>
-                    <a href="#">
-                      <img src="https://via.placeholder.com/80x80" alt="">
-                    </a>
-                    <div>
-                      <h2>
-                        <a href="#">상품명</a>
-                      </h2>
-                      <p>상품설명</p>
-                    </div>
-                  </article>
-                </td>
-                <td>1</td>
-                <td>27,000</td>
-                <td>5%</td>
+                <td>270</td>
                 <td>무료배성</td>
                 <td>27,000</td>
               </tr>
