@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>edit</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(() => {
+        // 부모창에서 id가 parent_val인 요소(태그)의 값 가져오기
+        var parent_val = opener.$("#parent_val").val();
+
+        // 자식창(팝업창)에서 id가 child_val인 요소(태그)의 값에 부모창에서 가져온 값 넣기
+        $("#prodNo").val(parent_val);
+
+        // 자식 -> 부모
+        var prodNo = $("#prodNo").val();
+        $("#parent_val", opener.document).val(prodNo);
+      });
+    </script>
+  </head>
+  <body>
+    <input type="text" value="" id="prodNo" />
+    <button type="button" id="testBtn">test</button>
+    <input type="text" id="no" />
+    <input type="file" name="fname" id="fname" />
+  </body>
+</html>
