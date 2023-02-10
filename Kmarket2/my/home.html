@@ -1,35 +1,221 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" class="h-100">
-    <head>
-        <meta charset="UTF-8">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"/>
-        <style>
-            *{
-                margin: 0;
-                padding: 0;
-            }
-        </style>
-        <title>케이마켓::대한민국 1등 온라인 쇼핑몰</title>
-        
-    </head>
-    <body>
-        <nav class="navbar">
-            <div class="container-fluid border-bottom">
-                <ul class="nav justify-content-end">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Active</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                  </ul>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Kmarket2/style/my/my.css">
+    <script src="/Kmarket2/js/my/home.js"></script>
+    <title>케이마켓::온라인 1등 쇼핑몰</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <div id="top"></div>
+        <div id="logo"></div>
+        <div id="my_k">
+          <div>
+            <a href="">
+              <img src="/Kmarket2/img/my/my_logo.jpg" alt="" id="my_logo">
+            </a>
+          </div>
+        </div>
+      </header>
+      <main id="home">
+        <aside>
+          <span id="piece"></span>
+          <ul>
+            <li><a href="">전체주문내역</a></li>
+            <li><a href="">포인트내역</a></li>
+            <li><a href="">쿠폰</a></li>
+            <li><a href="">나의리뷰</a></li>
+            <li><a href="">문의하기</a></li>
+            <li><a href="">나의설정</a></li>
+          </ul>
+        </aside>
+        <section>
+          <div id="banner">
+            <a href="">
+              <img src="/Kmarket2/img/my/my_banner1.jpg" alt="my_banner1" id="my_banner1">
+            </a>
+          </div>
+          <div id="my_recent_order">
+            <h3>최근주문내역<a href="" class="more"></a></h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>날짜</th>
+                  <th colspan="2">상품정보</th>
+                  <th>상태</th>
+                  <th>확인/신청</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2022-12-13</td>
+                  <td><img src="https://via.placeholder.com/80x80" alt=""></td>
+                  <td>
+                    <p>상호명</p>
+                    <p>상품명</p>
+                    <p>수량 : 1개 / 주문번호 : 1012211341</p>
+                    <p>34,000원</p>
+                  </td>
+                  <td>배송완료</td>
+                  <td>
+                    <a href="" class="my_receive"></a>
+                    <a href="" class="my_review"></a>
+                    <a href="" class="my_return">반품신청</a>
+                    <a href="" class="my_exchange">교환신청</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="my_point_list">
+            <h3>포인트적립내역<a href="" class="more"></a></h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>날짜</th>
+                  <th>구분</th>
+                  <th>주문번호</th>
+                  <th>적립금액</th>
+                  <th>비고</th>
+                  <th>유효기간</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2022-12-10</td>
+                  <td>적립</td>
+                  <td>2022121001</td>
+                  <td>340</td>
+                  <td>상품 구매확정</td>
+                  <td>2024-12-10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="my_review_list">
+            <h3>상품평<a href="" class="more"></a></h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>번호</th>
+                  <th>상품명</th>
+                  <th>내용</th>
+                  <th>평점</th>
+                  <th>작성일</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>상품명</td>
+                  <td>배송이 빠릅니다. 잘사용하겠습니다.</td>
+                  <td><span class="star star1"></span></td>
+                  <td>2022-12-10</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>상품명</td>
+                  <td>배송이 빠릅니다. 잘사용하겠습니다.</td>
+                  <td><span class="star star2"></span></td>
+                  <td>2022-12-10</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>상품명</td>
+                  <td>배송이 빠릅니다. 잘사용하겠습니다.</td>
+                  <td><span class="star star3"></span></td>
+                  <td>2022-12-10</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>상품명</td>
+                  <td>배송이 빠릅니다. 잘사용하겠습니다.</td>
+                  <td><span class="star star4"></span></td>
+                  <td>2022-12-10</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>상품명</td>
+                  <td>배송이 빠릅니다. 잘사용하겠습니다.</td>
+                  <td><span class="star star5"></span></td>
+                  <td>2022-12-10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="my_qna_list">
+            <h3>문의내역<a href="" class="more"></a></h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>번호</th>
+                  <th>문의채널</th>
+                  <th>문의유형</th>
+                  <th>제목</th>
+                  <th>작성일</th>
+                  <th>상태</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>5</td>
+                  <td>고객센터</td>
+                  <td>주문/결제</td>
+                  <td>신용카드 결제 중 오류가 난 경우 어떻게 하나요?</td>
+                  <td>2023-12-12</td>
+                  <td class="qna_stat">0</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>고객센터</td>
+                  <td>주문/결제</td>
+                  <td>신용카드 결제 중 오류가 난 경우 어떻게 하나요?</td>
+                  <td>2023-12-12</td>
+                  <td class="qna_stat">1</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>판매자게시판</td>
+                  <td>배송</td>
+                  <td>배송기간이 보통 얼마나 걸리나요?</td>
+                  <td>2023-12-12</td>
+                  <td class="qna_stat">1</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="my_confirm">
+            <span></span>
+            <div>
+              <div>
+                <span id="my_address"></span><a href="" class="my_change"></a>
+                <p class="my_cur_data"></p>
+                <p class="my_update"></p>
+              </div>
+              <div>
+                <span id="my_email"></span><a href="" class="my_change"></a>
+                <p class="my_cur_data">abcd123@gmail.com</p>
+                <p class="my_update">(최종수정일 2021-12-10)</p>
+              </div>
+              <div>
+                <span id="my_phone"></span><a href="" class="my_change"></a>
+                <p class="my_cur_data">010-1234-5678</p>
+                <p class="my_update">(최종수정일 2021-12-10)</p>
+              </div>
             </div>
-        </nav>
-    </body>
+            
+          </div>
+        </section>
+      </main>
+      <footer></footer>
+    </div>
+    
+
+
+
+
+  
+  </body>
 </html>
