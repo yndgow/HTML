@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+      integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://kit.fontawesome.com/e8f010a863.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+      $(function () {
+        $('.variable-width').slick({
+          infinite: true, // 무한 반복옵션
+          speed: 400, // 다음버튼 클릭시 다음 화면 뜨는데 걸리는시간(ms)
+          variableWidth: true,
+          arrows: true,
+          prevArrow: "<button type='button' class='slick-prev slick-arrow'>Previous</button>",
+          nextArrow: "<button type='button' class='slick-next slick-arrow'>Next</button>",
+        });
+      });
+    </script>
+    <style>
+      main#product-detail {
+        position: relative;
+      }
+      main#product-detail > .variable-width > .slider {
+        width: 960px;
+        /* height: 800px; */
+        /* border: 1px solid red; */
+        /* overflow: hidden; */
+      }
+      main#product-detail > .variable-width .slick-track {
+        background-color: rgb(231, 231, 231);
+      }
+      main#product-detail > .variable-width > .slider > img {
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0 auto;
+      }
+      main#product-detail > .variable-width .slick-arrow {
+        z-index: 1;
+      }
+      main#product-detail > .variable-width .slick-next {
+        right: 45px;
+      }
+      main#product-detail > .variable-width .slick-prev {
+        left: 25px;
+      }
+      main#product-detail > .variable-width .slick-prev::before {
+        font: var(--fa-font-solid);
+        content: '\f053';
+        font-size: 70px;
+        color: rgb(166, 166, 166);
+      }
+      main#product-detail > .variable-width .slick-next::before {
+        font: var(--fa-font-solid);
+        content: '\f054';
+        font-size: 70px;
+        color: rgb(166, 166, 166);
+      }
+
+      main#product-detail > .detail {
+        position: absolute;
+        width: 350px;
+        height: 230px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -80%);
+        text-align: center;
+        font-weight: bold;
+        background-color: #fff;
+        background-color: rgba(245, 245, 245, 0.5);
+      }
+      main#product-detail > .detail:hover {
+        transition: 1s ease-out;
+        background-color: rgba(245, 245, 245, 0.9);
+      }
+      main#product-detail > .detail:not(:hover) {
+        transition: 1s ease-out;
+        background-color: rgba(245, 245, 245, 0.5);
+      }
+
+      main#product-detail > .detail > p {
+        font-weight: normal;
+        font-size: 12px;
+      }
+      main#product-detail > .detail > .add-cart {
+        width: 240px;
+        height: 50px;
+        margin: 0 auto;
+        padding: 0px 20px;
+        background-color: #000;
+        color: #fff;
+        font-size: 12px;
+        line-height: 50px;
+        cursor: pointer;
+      }
+      main#product-detail > .delivery-info {
+      }
+    </style>
+    <script>
+      $(function () {
+        $('.add-cart').on('click', function () {
+          confirm('장바구니 기능테스트');
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="./images/logo/logo.png" alt="" />
+        </div>
+        <ul class="menu">
+          <li>트래블</li>
+          <li>핸드백</li>
+          <li>지갑</li>
+          <li>쥬얼리&시계</li>
+          <div class="submenu">
+            <span class="close">X</span>
+            <div class="subcategory">
+              <ul>
+                <li>더블백</li>
+                <li>캐리어</li>
+                <li>하드쉘</li>
+              </ul>
+              <ul>
+                <li>탑 핸들백</li>
+                <li>토트백</li>
+                <li>숄더백</li>
+                <li>크로스백</li>
+                <li>미니백</li>
+                <li>클러치</li>
+              </ul>
+              <ul>
+                <li>카드 지갑</li>
+                <li>반지갑</li>
+                <li>장지갑</li>
+                <li>체인지갑</li>
+              </ul>
+              <ul>
+                <li>패션 주얼리</li>
+                <li>파인 주얼리</li>
+                <li>실버 주얼리</li>
+                <li>시계</li>
+              </ul>
+              <div></div>
+            </div>
+          </div>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="product-detail">
+      <div class="variable-width">
+        <div class="slider">
+          <img src="https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1685033127/760123_FACLK_1094_003_100_0000_Light-GG.jpg" alt="" />
+        </div>
+        <div class="slider">
+          <img src="https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1685033125/760123_FACLK_1094_001_083_0000_Light-GG.jpg" alt="" />
+        </div>
+        <div class="slider">
+          <img src="https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1685033126/760123_FACLK_1094_002_083_0000_Light-GG.jpg" alt="" />
+        </div>
+        <div class="slider">
+          <img src="https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1685033128/760123_FACLK_1094_009_083_0000_Light-GG.jpg" alt="" />
+        </div>
+        <div class="slider">
+          <img src="https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1685033129/760123_FACLK_1094_010_083_0000_Light-GG.jpg" alt="" />
+        </div>
+        <div class="slider">
+          <img src="https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1685033130/760123_FACLK_1094_012_083_0000_Light-GG.jpg" alt="" />
+        </div>
+        <div class="slider">
+          <img src="https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1685033130/760123_FACLK_1094_013_083_0000_Light-GG.jpg" alt="" />
+        </div>
+      </div>
+      <div class="detail">
+        <h4>[구찌 사보이] 스몰 더플백</h4>
+        <div>\3,200,000</div>
+        <p>재고보유</p>
+        <p>1~3일 이내 발송 가능한 상품입니다.</p>
+        <div class="add-cart">쇼핑백에 담기</div>
+      </div>
+      <div class="delivery-info"></div>
+      <div class="payment-info"></div>
+    </main>
+
+    <footer>
+      <div>여기가 푸터</div>
+    </footer>
+  </body>
+  <script src="./js/script.js"></script>
+</html>
