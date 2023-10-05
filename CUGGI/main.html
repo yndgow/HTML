@@ -140,12 +140,7 @@
         align-items: center;
         flex-wrap: wrap;
       }
-      main#product-detail .product-info {
-        width: 100%;
-        height: 100%;
-        border: 1px solid rgb(234, 234, 234);
-        box-sizing: border-box;
-      }
+
       main#product-detail .info-title {
         font-weight: bold;
 
@@ -154,6 +149,7 @@
       main#product-detail .info-1 > div > div:nth-child(1) {
         display: flex;
         width: 100%;
+        cursor: pointer;
       }
       main#product-detail .info-1 > div > div > p:nth-child(2) {
         margin: 0;
@@ -171,6 +167,25 @@
       main#product-detail .info-more > ul > li {
         list-style-type: disc;
       }
+
+      main#product-detail .product-info {
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgb(234, 234, 234);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+      main#product-detail .product-info > img {
+        width: 200px;
+      }
+      main#product-detail .product-info > p:nth-child(2) {
+        margin-right: auto;
+        margin-top: 50px;
+        font-weight: bold;
+      }
     </style>
     <script>
       $(function () {
@@ -178,25 +193,29 @@
           confirm('장바구니 기능테스트');
         });
 
-        let isOpenPrInfo1 = false;
-        let isOpenPrInfo2 = false;
-        let isOpenPrInfo3 = false;
-
         // 상품 일반 정보 클릭시 슬라이드 함수
         $('.extend-info').on('click', function (e) {
-          $(this)
-            .parent('.info-div')
-            .children('.info-more')
-            .slideToggle(400, function () {
-              if (isOpenPrInfo1) {
-              }
-            }); // 현재 클릭한 부모의 자식클래스를
-          let more = $(this).children('p:eq(1)').html();
-          if (more == '<i class="fa-solid fa-minus"></i>') {
-            $(this).children('p:eq(1)').html('<i class="fa-solid fa-plus"></i>');
-          } else {
-            $(this).children('p:eq(1)').html('<i class="fa-solid fa-minus"></i>');
-          }
+          let slideNum = $(this).data('target');
+          let curSlide = $('#' + slideNum);
+          let iconElement = $(this).find('i'); // 클릭한 요소 내의 아이콘
+
+          iconElement.removeClass('fa-plus').addClass('fa-minus');
+
+          curSlide.slideToggle(400, function () {
+            if (curSlide.is(':visible')) {
+              iconElement.removeClass('fa-plus').addClass('fa-minus');
+            } else {
+              iconElement.removeClass('fa-minus').addClass('fa-plus');
+            }
+          });
+
+          $('.extend-info')
+            .not(this)
+            .each(function () {
+              let otherIconElement = $(this).find('i');
+              otherIconElement.removeClass('fa-minus').addClass('fa-plus');
+            });
+          $('.info-more').not(curSlide).slideUp(400);
         });
       });
     </script>
@@ -282,11 +301,11 @@
       <div class="detail-info">
         <div class="info-1">
           <div class="product-notice-info info-div">
-            <div class="extend-info info-more1">
+            <div class="extend-info" data-target="slide1">
               <p class="info-title">상품 취급시 주의사항</p>
               <p><i class="fa-solid fa-plus"></i></p>
             </div>
-            <div class="info-more">
+            <div class="info-more" id="slide1">
               구찌는 제품 제작 시 소재 선택에 신중을 기울입니다. 제품의 수명을 연장하기 위해 취급에 주의하여 주시기 바랍니다.<br />
               <ul>
                 <li>직사광선, 열 및 비에 노출되지 않도록 주의하십시오. 제품이 물에 젖은 경우 그 즉시 부드러운 천으로 닦아 주십시오.</li>
@@ -297,25 +316,26 @@
             </div>
           </div>
           <div class="delivery-info info-div">
-            <div class="extend-info info-more2">
+            <div class="extend-info" data-target="slide2">
               <p class="info-title">배송/교환 및 반품 정보</p>
               <p><i class="fa-solid fa-plus"></i></p>
             </div>
-            <div class="info-more">
+            <div class="info-more" id="slide2">
               구찌는 제품 제작 시 소재 선택에 신중을 기울입니다. 제품의 수명을 연장하기 위해 취급에 주의하여 주시기 바랍니다.<br />
               <ul>
                 <li>구찌 공식 온라인 스토어를 통하여 판매되는 모든 상품은 구찌코리아의 지정 택배사인 일양로지스를 통해 고객님께 배송됩니다.</li>
                 배송사 정보 : 일양로지스 (02-3277-9500, www.ilyanglogis.com)
                 <li>
-                  예약 주문 및 주문 제작(Made to Order) 아이템은 상품 상세 페이지에 안내된 예상 날짜에 배송됩니다. 맞춤서비스 (이니셜 서비스/DIY)상품의 배송일은 안내된 일정보다
-                  최대 2일 정도(영업일 기준) 지연될 수 있습니다.
+                  예약 주문 및 주문 제작(Made to Order) 아이템은 상품 상세 페이지에 안내된 예상 날짜에 배송됩니다.<br />
+                  맞춤서비스 (이니셜 서비스/DIY)상품의 배송일은 안내된 일정보다 최대 2일 정도(영업일 기준) 지연될 수 있습니다.
                 </li>
                 <li>
                   공식 온라인 스토어에서 주문한 상품은 수령한 날로부터 14일 이내에 무료 교환 또는 반품 서비스가 제공됩니다. 단, 다음의 경우에는 교환/반품이 제한될 수 있습니다.
                 </li>
-                (1) 고객님에게 책임 있는 사유로 상품이 훼손되었거나 고객님의 사용 또는 일부 소비에 의하여 상품의 가치가 감소한 경우 (2) 뷰티 상품의 경우, 이미 개봉 하였거나 배송
-                당시 부착되었던 셀로판 포장이 제거된 경우 (3) 상품에 부착된 시큐리티 택을 제거하거나 RFID가 훼손된 경우 (4) 주문 제작 상품 또는 맞춤 서비스 상품 (이니셜 서비스 또는
-                DIY) 의 경우
+                (1) 고객님에게 책임 있는 사유로 상품이 훼손되었거나 고객님의 사용 또는 일부 소비에 의하여 상품의 가치가 감소한 경우<br />
+                (2) 뷰티 상품의 경우, 이미 개봉 하였거나 배송당시 부착되었던 셀로판 포장이 제거된 경우<br />
+                (3) 상품에 부착된 시큐리티 택을 제거하거나 RFID가 훼손된 경우<br />
+                (4) 주문 제작 상품 또는 맞춤 서비스 상품 (이니셜 서비스 또는DIY) 의 경우
                 <li>구찌코리아의 지정 택배사인 일양로지스 이외의 타택배를 이용하여 발생된 입고 지연 및 분실에 대하여 구찌코리아는 책임을 지지 않습니다.</li>
                 <li>자세한 사항은 상품 구매 시 발행된 디지털 인보이스를 참조해 주시기 바라며 원활한 서비스를 위하여 해당 인보이스를 보관하실 것을 권장합니다.</li>
                 <li>
@@ -327,15 +347,22 @@
             </div>
           </div>
           <div class="payment-info info-div">
-            <div class="extend-info info-more3">
+            <div class="extend-info" data-target="slide3">
               <p class="info-title">결제 정보</p>
               <p><i class="fa-solid fa-plus"></i></p>
             </div>
-            <div class="info-more">구구찌 온라인 스토어에서는 카카오페이, 신용카드, 체크카드 및 계좌이체로 결제 가능합니다.</div>
+            <div class="info-more" id="slide3">구찌 온라인 스토어에서는 카카오페이, 신용카드, 체크카드 및 계좌이체로 결제 가능합니다.</div>
           </div>
         </div>
         <div class="info-2">
-          <div class="product-info"></div>
+          <div class="product-info">
+            <img src="https://media.gucci.com/style/White_Center_0_0_250x170/1685033125/760123_FACLK_1094_001_083_0000_Light-GG.jpg" alt="상품사진" />
+            <p>상품정보</p>
+            <p>
+              광택 있는 표면과 뛰어난 내구성이 특징인 GG 크리스털 캔버스가 남성 패션소품 라인에 어우러져 기존 하우스 디자인에 현대적인 감각을 더함. 상징적인 그린/레드 웹(Web)으로
+              한층 돋보이는 메신저백.
+            </p>
+          </div>
         </div>
       </div>
     </main>
