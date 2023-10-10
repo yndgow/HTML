@@ -8,126 +8,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/e8f010a863.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/list.css" />
     <script src="./js/list.js"></script>
-
-    <!-- 상품목록 스타일 -->
-    <style>
-      main#product-list {
-        width: 100%;
-        height: auto;
-        position: relative;
-      }
-      main#product-list > .detail-category {
-        width: 100%;
-        height: 802px;
-        position: relative;
-      }
-      main#product-list .detail-category-img {
-        width: 100%;
-        filter: brightness(75%);
-      }
-      main#product-list .detail-category-title {
-        position: absolute;
-        color: #fff;
-        z-index: 1;
-        top: 62%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 45px;
-      }
-      main#product-list .detail-filter {
-        display: flex;
-        width: 100%;
-        line-height: 24px;
-        padding: 15px;
-        box-sizing: border-box;
-        font-size: 12px;
-        padding-right: 30px;
-      }
-      main#product-list .detail-filter > div:nth-child(2) {
-        display: flex;
-        justify-content: space-between;
-        width: 400px;
-        margin-left: auto;
-      }
-      main#product-list > .detail-main {
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-wrap: wrap;
-      }
-      main#product-list .product-one {
-        position: relative;
-        width: 20%;
-        height: 420px;
-        border: 1px solid #eaeaea;
-        box-sizing: border-box;
-        overflow: hidden;
-        cursor: pointer;
-      }
-      main#product-list .product-one > .slide {
-        display: flex;
-        position: absolute;
-        bottom: 50px;
-      }
-      main#product-list .product-one p {
-        position: absolute;
-        line-height: 420px;
-        margin: 0;
-        cursor: pointer;
-        opacity: 0; /* 초기에는 투명하게 설정 */
-        visibility: hidden;
-        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* opacity와 visibility에 모두 transition을 적용 */
-      }
-
-      main#product-list .product-one p.active {
-        opacity: 1; /* 투명도를 1로 설정하여 나타나도록 함 */
-        visibility: visible; /* 표시 상태로 변경 */
-      }
-
-      main#product-list .product-one .btnPrev {
-        left: 0px;
-        margin-right: 10px;
-        margin-left: 10px;
-      }
-
-      main#product-list .product-one .btnNext {
-        left: 344px;
-        margin-right: 10px;
-        margin-left: 10px;
-      }
-      main#product-list .product-one img {
-        width: 316px;
-        object-fit: contain;
-        margin: 0 32px 0 32px;
-      }
-      main#product-list .slide {
-        position: relative;
-        left: 0;
-        transition: left 0.5s ease-out;
-      }
-      main#product-list .product-all-btn {
-        margin: 20px auto;
-        height: 50px;
-        width: 100px;
-        line-height: 50px;
-        text-align: center;
-        background-color: black;
-        color: #fff;
-        font-weight: bold;
-        font-size: 12px;
-        border-radius: 3px;
-        cursor: pointer;
-      }
-    </style>
-
-    <script>
-      // 슬라이드 버튼 마우스 오버시 나타내기
-      // $('.product-one').click(function (e) {
-      //   let productId = $(this).attr('id');
-      //   location.href = `http://localhost:90/CUGGI/product/detail?productId=${productId}`;
-      // });
-    </script>
   </head>
 
   <body>
@@ -185,12 +67,16 @@
         />
       </div>
       <div class="detail-filter">
-        <div>여성 / 핸드백</div>
+        <div>핸드백</div>
         <div>
-          <div>카테고리</div>
-          <div>라인</div>
-          <div>필터</div>
-          <div>정렬기준 : 신상품</div>
+          <div class="detail-filter-current">정렬기준 : <span>신상품</span></div>
+        </div>
+        <div class="detail-filter-option">
+          <ul>
+            <li class="option-list createAt on"><a href="http://localhost:90/product/list?secondCategoryId=${secondCategoryId}&filter=createAt">신상품</a></li>
+            <li class="option-list priceDESC"><a href="http://localhost:90/product/list?secondCategoryId=${secondCategoryId}&filter=priceDESC">가격 - 높은 가격순</a></li>
+            <li class="option-list priceASC"><a href="http://localhost:90/product/list?secondCategoryId=${secondCategoryId}&filter=priceASC">가격 - 낮은 가격순</a></li>
+          </ul>
         </div>
       </div>
       <div class="detail-main">

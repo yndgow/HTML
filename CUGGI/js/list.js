@@ -22,14 +22,40 @@ $(() => {
     let classNames = $(this).attr('class'); // 클래스 이름 변수
     slideImg($(this), classNames); // 함수 실행
   });
-
+  // 슬라이드 버튼 마우스 오버시 나타내기
   $('.product-one').on('mouseover mouseout', function () {
     $(this).find('p').toggleClass('active');
   });
+  // 필터 마우스 오버시 나타내기
+  $('.detail-filter-current').on('mouseover', function () {
+    $('.detail-filter-option').addClass('active');
+  });
+  $('.detail-filter-option').on('mouseover', function () {
+    $('.detail-filter-option').addClass('active');
+  });
+  $('.detail-filter-current').on('mouseout', function () {
+    $('.detail-filter-option').removeClass('active');
+  });
+  $('.detail-filter-option').on('mouseout', function () {
+    $('.detail-filter-option').removeClass('active');
+  });
+  // 필터 클릭시 정렬
+  $('.option-list').on('click', function () {
+    let href = $(this).children('a').attr('href');
+    console.log(href);
+    location.href = href;
+  });
+
   // TODO
   $('.product-all-btn').on('click', function () {
     alert('모두 보기 ajax');
   });
+
+  // 상세보기로 이동
+  // $('.product-one').click(function (e) {
+  //   let productId = $(this).attr('id');
+  //   location.href = `http://localhost:90/CUGGI/product/detail?productId=${productId}`;
+  // });
 });
 
 //

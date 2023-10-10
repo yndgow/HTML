@@ -1,0 +1,153 @@
+/* 상품목록 스타일 */
+main#product-list {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+main#product-list > .detail-category {
+  width: 100%;
+  height: 802px;
+  position: relative;
+}
+main#product-list .detail-category-img {
+  width: 100%;
+  filter: brightness(75%);
+}
+main#product-list .detail-category-title {
+  position: absolute;
+  color: #fff;
+  z-index: 1;
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 45px;
+}
+main#product-list .detail-filter {
+  display: flex;
+  position: relative;
+  width: 100%;
+  line-height: 50px;
+  padding: 0 50px;
+  box-sizing: border-box;
+  font-size: 12px;
+}
+main#product-list .detail-filter-current {
+  cursor: pointer;
+}
+main#product-list .detail-filter > div:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+  margin-left: auto;
+}
+main#product-list .detail-filter > div:nth-child(2) > div > span {
+  font-weight: bold;
+  text-decoration-line: underline;
+}
+main#product-list .detail-filter > .detail-filter-option {
+  position: absolute;
+  visibility: hidden;
+  width: 140px;
+  height: auto;
+  box-sizing: border-box;
+  right: 26px;
+  z-index: 1;
+  top: 50px;
+  cursor: pointer;
+}
+main#product-list .detail-filter > .detail-filter-option.active {
+  visibility: visible;
+}
+main#product-list .detail-filter > .detail-filter-option > ul {
+  padding: 0;
+  margin: 0;
+}
+main#product-list .detail-filter > .detail-filter-option > ul > li {
+  padding: 0 0 0 15px;
+  line-height: 40px;
+  border: 1px solid #eaeaea;
+  border-top: none;
+}
+
+main#product-list .detail-filter > .detail-filter-option > ul > li > a {
+  color: inherit;
+}
+main#product-list .option-list:hover {
+  background-color: #f5f5f5;
+  color: #999999;
+}
+
+main#product-list .option-list.on {
+  background-color: #313131;
+  color: #f4f4f4;
+}
+
+main#product-list > .detail-main {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+main#product-list .product-one {
+  position: relative;
+  width: 20%;
+  height: 420px;
+  border: 1px solid #eaeaea;
+  box-sizing: border-box;
+  overflow: hidden;
+  cursor: pointer;
+}
+main#product-list .product-one > .slide {
+  display: flex;
+  position: absolute;
+  bottom: 50px;
+}
+main#product-list .product-one p {
+  position: absolute;
+  line-height: 420px;
+  margin: 0;
+  cursor: pointer;
+  opacity: 0; /* 초기에는 투명하게 설정 */
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* opacity와 visibility에 모두 transition을 적용 */
+}
+
+main#product-list .product-one p.active {
+  opacity: 1; /* 투명도를 1로 설정하여 나타나도록 함 */
+  visibility: visible; /* 표시 상태로 변경 */
+}
+
+main#product-list .product-one .btnPrev {
+  left: 0px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+main#product-list .product-one .btnNext {
+  left: 344px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+main#product-list .product-one img {
+  width: 316px;
+  object-fit: contain;
+  margin: 0 32px 0 32px;
+}
+main#product-list .slide {
+  position: relative;
+  left: 0;
+  transition: left 0.5s ease-out;
+}
+main#product-list .product-all-btn {
+  margin: 20px auto;
+  height: 50px;
+  width: 100px;
+  line-height: 50px;
+  text-align: center;
+  background-color: black;
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
