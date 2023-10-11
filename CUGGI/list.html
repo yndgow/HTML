@@ -9,15 +9,29 @@
     <script src="https://kit.fontawesome.com/e8f010a863.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/list.css" />
-    <script src="./js/list.js"></script>
   </head>
 
   <body>
     <header>
       <nav>
         <div class="logo">
-          <a href="/"><img src="./images/logo/logo.png" alt="" /></a>
+          <div>
+            <a href="/"><img src="./images/logo/logo.png" alt="" /></a>
+          </div>
+          <div class="logo-nav">
+            <ul>
+              <li class="basketBtn"><i class="fa-solid fa-bag-shopping"></i></li>
+              <li class="profileBtn"><i class="fa-regular fa-user"></i></li>
+              <li class="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></li>
+            </ul>
+          </div>
+          <div class="search-area">
+            <form action="/product/list" id="searchForm">
+              <input type="text" name="search" id="searchInput" />
+            </form>
+          </div>
         </div>
+
         <ul class="menu">
           <li>트래블</li>
           <li>핸드백</li>
@@ -202,4 +216,5 @@
     </footer>
   </body>
   <script src="./js/script.js"></script>
+  <script src="./js/list.js"></script>
 </html>

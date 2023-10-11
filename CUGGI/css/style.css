@@ -36,8 +36,10 @@ header {
 }
 
 header nav .logo {
+  height: 70px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 header nav .logo img {
@@ -53,6 +55,7 @@ header nav .menu {
 
 header nav .menu > li {
   margin: 0 80px;
+  cursor: pointer;
 }
 
 header nav .submenu {
@@ -62,7 +65,7 @@ header nav .submenu {
   top: 100%;
   z-index: 999;
   padding: 0;
-  margin-top: 30px;
+  margin-top: 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -172,4 +175,48 @@ footer div {
 
 .common-white-font {
   color: white;
+}
+
+/* 20231011 kjh*/
+.logo > div:nth-child(1) {
+  height: 50px;
+  /* text-align: center; */
+}
+.logo > .logo-nav > ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 170px;
+  justify-content: space-evenly;
+}
+.logo > .logo-nav > ul > li {
+  margin-right: 20px;
+  font-size: 20px;
+}
+.logo > .search-area {
+  position: absolute;
+  right: 20px;
+  top: 48px;
+  border: 1px solid #313131;
+  box-sizing: border-box;
+  width: 450px;
+  height: 160px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  display: none;
+}
+.logo > .search-area input {
+  width: 400px;
+  height: 26px;
+  line-height: 30px;
+  padding-left: 10px;
+  outline: none;
+}
+.logo > .logo-nav {
+  position: absolute;
+  right: 380px;
+  top: 12px;
+  font-size: 24px;
+  cursor: pointer;
 }

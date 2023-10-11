@@ -42,7 +42,6 @@ $(() => {
   // 필터 클릭시 정렬
   $('.option-list').on('click', function () {
     let href = $(this).children('a').attr('href');
-    console.log(href);
     location.href = href;
   });
 

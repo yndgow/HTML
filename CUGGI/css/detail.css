@@ -73,9 +73,6 @@ main#product-detail > .detail > .add-cart {
   cursor: pointer;
 }
 
-main#product-detail > .detail > .add-cart:hover {
-}
-
 main#product-detail > .detail-info {
   display: flex;
   width: 100%;
@@ -153,4 +150,12 @@ main#product-detail .product-info > p:nth-child(2) {
   margin-right: auto;
   margin-top: 50px;
   font-weight: bold;
+}
+main#product-detail .product-info > ul {
+  padding-left: 20px;
+}
+main#product-detail .product-info > ul > li {
+  list-style-type: disc;
+  font-size: 14px;
+  line-height: 20px;
 }
