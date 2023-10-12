@@ -1,0 +1,66 @@
+server: 
+  port: 90
+  servlet:
+    encoding:
+      charset: utf-8
+      force: true
+      
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/view/
+      suffix: .jsp
+  datasource:
+    url: jdbc:log4jdbc:mysql://15.164.49.38:3306/cuggi?serverTimeZone=Asia/Seoul
+    #driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    username: awskjh
+    password: 7193asd
+    
+  mail:
+    host: smtp.gmail.com # 1
+    port: 587 # 2
+    username: cuggiateam # 3
+    password: ooie ooxh mxxw gxxn # 4
+    properties:
+      mail:
+        smtp:
+          auth: true # 5
+          timeout: 5000 # 6
+          starttls:
+            enable: true # 7
+
+#  sql:  
+#    init:
+#      schema-locations:
+#      - classpath:db/table.sql
+#      data-locations:
+#      - classpath:db/data.sql
+  
+#  h2:
+#    console:
+#      enabled: true
+#  output:
+#   ansi: 
+#     enabled: always   
+  
+mybatis:
+  mapper-locations:
+  - classpath:mapper/**.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    
+# 초기 파라미터 설정    
+tenco:
+  key: 85135F3C6BFE9DF1735F8806F045AE73CECE7219F7840D8E7E9297A7F846B48A
+  
+  
+logging:
+  level:
+    jdbc:
+      sqlonly: info
+      sqltiming: off 
+      resultsettable: off
+      resultset: off
+      audit: off
+      connection: off

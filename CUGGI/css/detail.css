@@ -148,11 +148,12 @@ main#product-detail .product-info > img {
 }
 main#product-detail .product-info > p:nth-child(2) {
   margin-right: auto;
-  margin-top: 50px;
+  margin-top: 40px;
   font-weight: bold;
 }
 main#product-detail .product-info > ul {
   padding-left: 20px;
+  margin: 0;
 }
 main#product-detail .product-info > ul > li {
   list-style-type: disc;
