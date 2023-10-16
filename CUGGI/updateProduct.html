@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Insert title here</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e8f010a863.js" crossorigin="anonymous"></script>
     <style>
       a {
         color: #000;
@@ -78,8 +79,6 @@
         justify-content: space-between;
       }
 
-      .admin-wrap .insert-btn {
-      }
       .admin-wrap .list-table {
         margin-top: 4px;
 
@@ -162,6 +161,28 @@
       ul {
         list-style: none;
       }
+
+      /* updateProduct kjh */
+      .admin-wrap .updateProduct textarea{
+        resize: none;
+        width: 99%;
+      }
+      .admin-wrap .updateProduct .tableImgTd > div{
+        display: flex; 
+        justify-content: center; 
+        text-align: center;
+      }
+      .admin-wrap .updateProduct .tableImgTd > div > div{
+        position: relative;
+      }
+      .admin-wrap .updateProduct .tableImgTd > div > div > div{
+        position: absolute; 
+        right: 45px;
+      }
+      .admin-wrap .updateProduct .tableImgTd > div > div > img{
+        width: 70%;
+      }
+
     </style>
   </head>
   <body>
@@ -188,67 +209,100 @@
         <div class="main-console">
           <form class="one-table-form" method="POST" action="/admin/product/${adminProductList[0].id}" enctype="multipart/form-data">
             <h2>상품 수정 페이지</h2>
-            <table class="one-table">
+            <table class="one-table updateProduct">
               <tbody>
                 <tr>
                   <td>상품 아이디</td>
                   <td><input type="hidden" id="product-feature" name="id" value="${adminProductList[0].id}" />${adminProductList[0].id}</td>
-                </tr>
-                <tr>
-                  <td>상품 이름</td>
-                  <td><input type="text" id="prduct-name" name="productName" value="${adminProductList[0].productName}" /></td>
-                </tr>
-                <tr>
-                  <td>상품 가격</td>
-                  <td><input type="number" id="prduct-price" name="price" value="${adminProductList[0].price}" /></td>
-                </tr>
-                <tr>
-                  <td>상품 설명</td>
-                  <td>
-                    <textarea rows="4" cols="140" id="product-feature" name="productFeature" style="resize: none">${adminProductList[0].productFeature}</textarea>
-                  </td>
-                </tr>
-                <tr>
-                  <td>재고</td>
-                  <td><input type="number" id="product-quantity" name="quantity" value="${adminProductList[0].quantity}" /></td>
-                </tr>
-                <tr>
-                  <td>1차카테고리</td>
-                  <td>
-                    <select name="firstCategoryId" id="first-category-id">
-                      <option value="1">트래블</option>
-                      <option value="2">핸드백</option>
-                      <option value="3">지갑</option>
-                      <option value="4">쥬얼리&시계</option>
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2차카테고리</td>
-                  <td>
+              </tr>
+              <tr>
+                <td>상품 이름</td>
+                <td><input type="text" id="prduct-name" name="productName" value="${adminProductList[0].productName}" /></td>
+              </tr>
+              <tr>
+                <td>상품 가격</td>
+                <td><input type="number" id="prduct-price" name="price" value="${adminProductList[0].price}" /></td>
+              </tr>
+              <tr>
+                <td>상품 설명</td>
+                <td>
+                  <textarea rows="4" cols="140" id="product-feature" name="productFeature">${adminProductList[0].productFeature}</textarea>
+                </td>
+              </tr>
+              <tr>
+                <td>재고</td>
+                <td><input type="number" id="product-quantity" name="quantity" value="${adminProductList[0].quantity}" /></td>
+              </tr>
+              <tr>
+                <td>1차카테고리</td>
+                <td>
+                   <select name="firstCategoryId" id="first-category-id">
+                        <option value="1" ${adminProductList[0].fcId == 1 ? 'selected' : '' }>트래블</option>
+                          <option value="2" ${adminProductList[0].fcId == 2 ? 'selected' : '' }>핸드백</option>
+                          <option value="3" ${adminProductList[0].fcId == 3 ? 'selected' : '' }>지갑</option>
+                          <option value="4" ${adminProductList[0].fcId == 4 ? 'selected' : '' }>쥬얼리&시계</option>
+                      </select>
+                </td>
+              </tr>
+              <tr>
+                <td>2차카테고리</td>
+                <td>
                     <select name="secondCategoryId" id="second-category-id">
-                      <option value="1">트래블</option>
-                      <option value="2">핸드백</option>
-                      <option value="3">지갑</option>
+                      <c:forEach items="${secondCategory}" var="item">
+                        <option value="${item.id}" ${item.id == adminProductList[0].scId ? 'selected' : '' }>${item.secondCategoryName}</option>
+                      </c:forEach>
                     </select>
                   </td>
-                </tr>
-                <tr>
-                  <td>썸네일</td>
-                  <td id="thumbnailImgTd">
-                    <div style="display: flex; justify-content: center; text-align: center"></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>상품 세부 이미지</td>
-                  <td id="detailImglTd">
-                    <div style="display: flex; justify-content: center; text-align: center"></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <input type="submit" value="상품 수정" />
-          </form>
+              </tr>
+              <tr>
+                <td>썸네일</td>
+                <td class="tableImgTd" id="thumbnailImgTd">
+                  <div>
+                        <div>
+                          <div class="deleteImg"><i class="fa-solid fa-x"></i></div>
+                          <img src="./images/20231016/22cd95aa-4915-400d-b4df-f6a020cb6de2.avif" alt="${product.imgId}"><br>
+                          <input type="file" name="${product.imgId}"><br>
+                        </div>
+                        <div>
+                          <div><i class="fa-solid fa-x"></i></div>
+                          <img src="./images/20231016/c3b7d35f-7bee-46d8-b4a7-b6cfe1ef2652.avif" alt="${product.imgId}"><br>
+                          <input type="file" name="${product.imgId}"><br>
+                        </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>상품 세부 이미지</td>
+                <td class="tableImgTd" id="detailImglTd">
+                    <div>
+                        <div>
+                          <div><i class="fa-solid fa-x"></i></div>
+                          <img src="./images/20231016/2df1dc53-2454-4828-b513-1a5f36516f77.avif" alt="${product.imgId}"><br>
+                          <input type="file" name="${product.imgId}"><br>
+                        </div>
+                        <div>
+                          <img src="./images/20231016/49390476-f86c-4819-9e65-82c9a732966a.avif" alt="${product.imgId}"><br>
+                          <input type="file" name="${product.imgId}"><br>
+                        </div>
+                        <div>
+                          <img src="./images/20231016/77373555-6dac-42d6-882c-9bea48bbe3aa.avif" alt="${product.imgId}"><br>
+                          <input type="file" name="${product.imgId}"><br>
+                        </div>
+                        <div>
+                          <img src="./images/20231016/98ed6fb6-fa6d-4cae-809e-d5e7cb9576da.avif" alt="${product.imgId}"><br>
+                          <input type="file" name="${product.imgId}"><br>
+                        </div>
+                        <div>
+                          <img src="./images/20231016/c8006ab3-f9da-4cc9-99eb-015bf2310262.avif" alt="${product.imgId}"><br>
+                          <input type="file" name="${product.imgId}"><br>
+                        </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        <input type="submit" value="상품 수정" />
+      </form>
         </div>
       </div>
     </div>
@@ -277,7 +331,12 @@
         .catch((err) => console.log(err));
     });
 
-    const setSecondCategory = () => {};
+    const updateProduct = document.getElementsByClassName('updateProduct');
+    updateProduct[0].addEventListener('click', function(e){
+      if(e.target.className == 'deleteImg'){
+        alert();
+      }
+    });
 
     // const getFetchData = (url) => {
     //   return fetch(url)
