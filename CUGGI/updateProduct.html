@@ -177,7 +177,15 @@
       }
       .admin-wrap .updateProduct .tableImgTd > div > div > div{
         position: absolute; 
+        top: 5px;
         right: 45px;
+        background: #EA4F37; 
+        color: #fff;
+        border: 1px solid #EA4F37;
+        box-sizing: border-box;
+        width: 17px;
+        border-radius: 9px;
+        font-size: 11px;
       }
       .admin-wrap .updateProduct .tableImgTd > div > div > img{
         width: 70%;
@@ -258,13 +266,13 @@
                 <td>썸네일</td>
                 <td class="tableImgTd" id="thumbnailImgTd">
                   <div>
-                        <div>
+                        <div class="imgDiv">
                           <div class="deleteImg"><i class="fa-solid fa-x"></i></div>
                           <img src="./images/20231016/22cd95aa-4915-400d-b4df-f6a020cb6de2.avif" alt="${product.imgId}"><br>
                           <input type="file" name="${product.imgId}"><br>
                         </div>
                         <div>
-                          <div><i class="fa-solid fa-x"></i></div>
+                          <div class="deleteImg"><i class="fa-solid fa-x"></i></div>
                           <img src="./images/20231016/c3b7d35f-7bee-46d8-b4a7-b6cfe1ef2652.avif" alt="${product.imgId}"><br>
                           <input type="file" name="${product.imgId}"><br>
                         </div>
@@ -275,24 +283,28 @@
                 <td>상품 세부 이미지</td>
                 <td class="tableImgTd" id="detailImglTd">
                     <div>
-                        <div>
-                          <div><i class="fa-solid fa-x"></i></div>
+                        <div class="imgDiv">
+                          <div class="deleteImg" style="width: auto; border: 1px solid blue;"><i class="fa-solid fa-x"></i></div>
                           <img src="./images/20231016/2df1dc53-2454-4828-b513-1a5f36516f77.avif" alt="${product.imgId}"><br>
-                          <input type="file" name="${product.imgId}"><br>
+                          <input type="file" name="1"><br>
                         </div>
                         <div>
+                          <div class="deleteImg"><i class="fa-solid fa-x"></i></div>
                           <img src="./images/20231016/49390476-f86c-4819-9e65-82c9a732966a.avif" alt="${product.imgId}"><br>
                           <input type="file" name="${product.imgId}"><br>
                         </div>
                         <div>
+                          <div class="deleteImg"><i class="fa-solid fa-x"></i></div>
                           <img src="./images/20231016/77373555-6dac-42d6-882c-9bea48bbe3aa.avif" alt="${product.imgId}"><br>
                           <input type="file" name="${product.imgId}"><br>
                         </div>
                         <div>
+                          <div class="deleteImg"><i class="fa-solid fa-x"></i></div>
                           <img src="./images/20231016/98ed6fb6-fa6d-4cae-809e-d5e7cb9576da.avif" alt="${product.imgId}"><br>
                           <input type="file" name="${product.imgId}"><br>
                         </div>
                         <div>
+                          <div class="deleteImg"><i class="fa-solid fa-x"></i></div>
                           <img src="./images/20231016/c8006ab3-f9da-4cc9-99eb-015bf2310262.avif" alt="${product.imgId}"><br>
                           <input type="file" name="${product.imgId}"><br>
                         </div>
@@ -331,12 +343,19 @@
         .catch((err) => console.log(err));
     });
 
-    const updateProduct = document.getElementsByClassName('updateProduct');
-    updateProduct[0].addEventListener('click', function(e){
-      if(e.target.className == 'deleteImg'){
-        alert();
-      }
-    });
+    const imgDiv = document.getElementsByClassName('imgDiv');
+for(const div of imgDiv){
+	div.addEventListener('click', function(e){
+	  //console.log(e.target.className);      
+	  const clickClass = e.target.className;
+	  if(clickClass == 'fa-solid fa-x' || clickClass == 'deleteImg'){
+		  //confirm('삭제하시겠습니까?')
+	  	if(true){
+	    	console.log(this.childNodes);	
+	  	}
+	  }
+	});	
+}
 
     // const getFetchData = (url) => {
     //   return fetch(url)
