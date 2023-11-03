@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+    #chart {
+        width: 500px;
+        height: 300px;;
+    }
+</style>
+</head>
+<body>
+    <div id="chart">
+        <canvas id="myChart"></canvas>
+    </div>
+</body>
+<script>
+    const myChart = document.getElementById('myChart');
+    const chart1 = new Chart(myChart,
+    {
+        type : 'line',
+        data : {
+            labels: [1,2,3,4,5,6],
+            datasets:[{
+                label: '라벨',
+                data : [5,6,7,8,9,90]
+            }]
+
+        }
+    });
+    
+
+    function updateChart(chart, labels, data){
+        chart.data.datasets[0].label = '바꾸기';
+        chart.data.datasets[0].data = [1,2,3];
+        chart.data.labels = ['a','b','c'];
+        chart.update();
+    }
+
+    updateChart(chart1);
+
+
+</script>
+</html>

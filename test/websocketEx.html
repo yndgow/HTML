@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Test Page</title>
+    <!-- 화면분할을 위한 div 처리 -->
+    <style>
+        div.row {
+                width: 100%;
+                display: flex;
+                border: 1px solid #003458;
+        }
+        div.left	{
+            width: 300px;
+            float: left;
+            box-sizing: border-box;
+            /*
+            background: #FFF5EE;
+            */
+            font-size: 12px;
+        }
+        div.middle	{
+            width: 300px;
+            float: left;
+            box-sizing:	border-box;
+            background: #ece6cc;
+        }
+        div.right	{
+            width: 300px;
+            float: left;
+            box-sizing:	border-box;
+            background: #ece6cc;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 화면분할을 위한 div 처리 -->
+<!-- output3, command box -->
+<div style="background-color:#EEEEEE">
+    <pre id="output3" style="width: 100%; height: 10%; overflow: auto;"></pre>
+    </div>
+    <!-- output, 주식호가1 box  -->
+    <div class="left" style="background-color:#FFF5EE">
+    <input type="text" id="inputMessage1" style="width: 180px; height: 20px" value="005930"><br>
+    <button id="hokaregButton1" style="width: 80px; height: 20px; font-size: 12px">주식호가</button><button id="hokaderegButton1" style="width: 100px; height: 20px; font-size: 12px">주식호가해제</button><button id="closeButton" style="width: 100px; height: 20px; font-size: 12px">연결해제</button>
+    <pre id="output" style="width: 100%; height: 100%; overflow: auto;"></pre>
+    </div>
+    <!-- output, 주식체결1 box  -->
+    <div class="right" style="background-color:#FFFFFF">
+    <!-- <input type="text" id="inputMessage3" value="005930"> --> <br>
+    <button id="bidregButton1" style="width: 80px; height: 20px; font-size: 12px">주식체결</button><button id="bidderegButton1" style="width: 100px; height: 20px; font-size: 12px">주식체결해제</button>
+    <pre id="output2" style="width: 100%; height: 100%; overflow: auto;"></pre>
+    </div>
+    <!-- output, 주식호가2 box  -->
+    <div class="left" style="background-color:#FFF5EE">
+    <input type="text" id="inputMessage2" style="width: 180px; height: 20px font-size: 12px" value="000660"><br>
+    <button id="hokaregButton2" style="width: 80px; height: 20px; font-size: 12px">주식호가</button><button id="hokaderegButton2" style="width: 100px; height: 20px; font-size: 12px">주식호가해제</button>
+    <pre id="output_1" style="width: 100%; height: 100%; overflow: auto;"></pre>
+    </div>
+    <!-- output, 주식체결2 box  -->
+    <div class="right" style="background-color:#FFFFFF">
+    <!-- <input type="text" id="inputMessage4" value="000660"> --><br>
+    <button id="bidregButton2" style="width: 80px; height: 20px; font-size: 12px">주식체결</button><button id="bidderegButton2" style="width: 100px; height: 20px; font-size: 12px">주식체결해제</button>
+    <pre id="output2_1" style="width: 100%; height: 100%; overflow: auto;"></pre>
+    </div>
+    <!-- output, 주식체결통보 box  -->
+    <div class="middle">
+    <input type="text" id="inputMessage_htsid" style="width: 180px; height: 20px" value="101334"><br>
+    <button id="bidalamButton" style="width: 100px; height: 20px; font-size: 12px">주식체결통보</button><button id="xbidalamButton" style="width: 120px; height: 20px; font-size: 12px">주식체결통보해제</button>
+    <pre id="output1" style="width: 100%; height: 100%; overflow: auto;"></pre>
+    </div>
+    <script>
+        /** button action 시 stockcode 저장 전역변수 */
+        var stockcode1="";
+        var stockcode2="";
+        var htsid="";
+    
+        var g_app_key="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";		// send data 용 app_key
+        var g_appsecret="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+        var g_personalseckey="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    
+        var ping=0;
+        var pingpong=0;	// pingpong count
+    
+        /** AES256 DECODE IV, KEY 선언*****/
+        var encryptkey='';
+        var iv='';
+    
+        /*** Start	unicode replace step ********************************************************/
+        var escapable = /[\x00-\x1f\ud800-\udfff\u200c\u2028-\u202f\u2060-\u206f\ufff0-\uffff]/g;
+        function filterUnicode(quoted)	{
+            escapable.lastIndex = 0;
+            if (!escapable.test(quoted))	return quoted;
+    
+            return quoted.replace (escapable, function(a){
+                return '';
+            });
+        }
+        /** End of unicode replace step ********************************************************/
+    
+    
+        
+    
+        // ws 접속용 websocket
+        try	{
+            //url = "ws://ops.koreainvestment.com:31000";		//모의투자
+            url = "ws://ops.koreainvestment.com:21000";
+            w = new WebSocket(url);
+        }	catch (e)	{
+            log(e);
+        }
+    
+    
+        // websocket standby
+        w.onopen = function() {
+            log3("[Connection OK]");
+            log3("[OPS(WebSocket) Test Ready.]");
+        }
+    
+        // websocket close
+        w.onclose = function(e) {
+            log3("[CONNECTION CLOSED]");
+        }
+    
+        w.onmessage = function(e) {
+            var recvdata = filterUnicode(e.data);
+            console.log ("<<---"+recvdata);
+    
+            // 첫데이터가 0이나 1일경우 (암호화 여부)
+            if (recvdata[0] == 0|| recvdata[0] == 1)
+            {
+                var strArray = recvdata.split('|');	// 구분자로 문자열 자르기
+    
+                var trid = strArray[1];		// trid array
+                var bodydata = (strArray[3]);	// receve data
+                if (trid == "H0STCNT0" || trid == "K0STCNT0")	{
+                    console.log (bodydata);
+                }
+    
+            {
+                if (trid == "H0STCNT0" || trid == "K0STCNT0")	{	//주식체결가
+                    //document.getElementById("output2").innerHTML = ("");	// screen clear
+                    var objectlist = "유가증권단축종목코드       ,주식체결시간               ,주식현재가                 ,전일대비부호               ,전일대비                   ,전일대비율                 ,가중평균주식가격           ,주식시가                   ,주식최고가                 ,주식최저가                 ,매도호가1                  ,매수호가1                  ,체결거래량                 ,누적거래량                 ,누적거래대금               ,매도체결건수               ,매수체결건수               ,순매수 체결건수            ,체결강도                   ,총 매도수량                ,총 매수수량                ,체결구분                   ,매수비율                   ,전일 거래량대비등락율      ,시가시간                   ,시가대비 구분              ,시가대비                   ,최고가 시간                ,고가대비구분               ,고가대비                   ,최저가시간                 ,저가대비구분               ,저가대비                   ,영업일자                   ,신 장운영 구분코드         ,거래정지 여부              ,매도호가잔량               ,매수호가잔량               ,총 매도호가잔량            ,총 매수호가잔량            ,거래량 회전율              ,전일 동시간 누적거래량     ,전일 동시간 누적거래량 비율,시간구분코드               ,임의종료구분코드           ,정적VI발동기준가           ";
+                    var strResult = bodydata.split('^');		// 주식체결가 구분값으로 분할해서 array 처리
+                    var objectarray = objectlist.split(',');	// objectlist를 구분값으러 분할해서 array처리, 항목명
+
+                    // 어느쪽에 업데이트해야할지 종목코드로 판단한다.
+                    if (stockcode1 == strResult[ 0])
+                    {
+                        screenflag = 1;
+                        document.getElementById("output2").innerHTML = ("");	// screen clear
+                    }	else if (stockcode2 == strResult[ 0])	{
+                        screenflag = 2;
+                        document.getElementById("output2_1").innerHTML = ("");	// screen clear
+                    }
+
+                    var tot_loop_cnt = strArray[2];		// 주식 체결  건수
+                    var k = 1;		// 현재 표시 번호
+                    log2("주식 체결 건수             ["+"00"+k+"/"+tot_loop_cnt+"]", screenflag);		// 주식체결건수가 있어 모든데이터 활용시 분할해서 처리 필요
+                    log2("", screenflag);	// line feed
+                    log2("====================================", screenflag);
+                    var array_count = strResult.length;			// array 의 총 갯수
+                    console.log("array count:"+array_count);
+                    var nloopcount = array_count / tot_loop_cnt;	// 1회당 총 출력 개수
+                    console.log("objectarray.length:"+objectarray.length);
+                    var i = 0;
+                    var j = 0;
+
+                    // 체결건수가 1건 이상일 경우도 처리하도록 한다.
+                    for (i=0; i<array_count; i++)
+                    {
+                        // 항목갯수가 데이터의 1셋트 이므로 출력되는 데이터가 초과되면 데이터 1세트 출력 완료처리.
+                        if (j == objectarray.length)
+                        {
+                            if (stockcode1 == strResult[ 0])
+                            {
+                                document.getElementById("output2").innerHTML = ("");	// screen clear
+                            }	else if (stockcode2 == strResult[ 0])	{
+                                document.getElementById("output2_1").innerHTML = ("");	// screen clear
+                            }
+                            k += 1;
+                            log2("주식 체결 건수             ["+"00"+k+"/"+tot_loop_cnt+"]", screenflag);
+                            log2("", screenflag);
+                            log2("====================================", screenflag);
+                            j = 0;
+                        }
+                        //log2(objectarray[j]+objectarray[j].length+"["+strResult[i]+"]");
+                        log2(objectarray[j]+"["+strResult[i]+"]", screenflag);
+                        j++;
+                    }
+                }
+            }
+        }
+        document.getElementById("output3").scrollTop = document.getElementById("output3").scrollHeight;
+    }
+    
+    </script>
+</body>
+</html>
+
+
+
+
